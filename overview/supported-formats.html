@@ -2,11 +2,13 @@
 title: Supported 3D Formats
 description: 
 published: true
-date: 2020-07-31T19:28:05.083Z
+date: 2020-07-31T19:59:59.107Z
 tags: 3d formats
 editor: ckeditor
 -->
 
+<p>&nbsp;</p>
+<p>Unfortunately, even modern browsers cannot natively render CAD files from leading software vendors. Fortunately, most CAD files can be converted to modern web standard WebGL 3D without much being lost in between. By default we support Native formats listed below</p>
 <figure class="table">
   <table>
     <tbody>
@@ -15,7 +17,7 @@ editor: ckeditor
           <h5 style="text-align:justify;">Native</h5>
         </td>
         <td colspan="2">
-          <h5 style="text-align:justify;">Auto-Conversion Supported&nbsp;</h5>
+          <h5 style="text-align:justify;">Batch Auto-Conversion Supported*&nbsp;</h5>
         </td>
       </tr>
       <tr>
@@ -53,3 +55,11 @@ editor: ckeditor
     </tbody>
   </table>
 </figure>
+<p>For the best experience possible, utilize professional drawing tools such as Solidworks or Siemens NX and give your components and subcomponents meaningful names within the drawings. &nbsp;</p>
+<p>*Batch auto conversion utilizes an API to convert files and associated materials and textures to GLB format. This requires an additional subscription, or alternatively, you can utilize these methods to export to the native format:</p>
+<ul>
+  <li><a href="https://help.solidworks.com/2019/english/SolidWorks/sldworks/t_export_using_extended_reality.htm">Solidworks convert to glb</a></li>
+  <li><a href="https://doc.babylonjs.com/resources/3dsmax">3DSMax conversion to GLTF</a></li>
+  <li>&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
