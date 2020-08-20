@@ -1,0 +1,17 @@
+<!--
+title: Custom 3D App
+description: 
+published: true
+date: 2020-08-20T12:47:40.232Z
+tags: examples
+editor: ckeditor
+-->
+
+<h2>Custom 3D App</h2>
+<p>&nbsp;</p>
+<h3>Branding with Static Resources</h3>
+<p>Our image attributes (loadingImage, the imageURL parameter in the displayMedia method and the brandImageURL) all utilize the direct path to the image in order to render to your screen. If your org has access to the URL you supply for these parameters, your images will display properly.&nbsp;</p>
+<p>Often times, security is locked down within your org, causing images not to display whenever they are used from outside servers. To get around this, we can use Static Resources as the values for the url like this:&nbsp;</p>
+<figure class="image"><img src="/testcustomrenderdrawdev_cmp_—_renderdraw.png"></figure>
+<p>This value represents an image we uploaded to a Static Resource, by name like this:</p>
+<figure class="image"><img src="/static_resources___salesforce.png"></figure>
