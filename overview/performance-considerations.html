@@ -1,0 +1,62 @@
+<!--
+title: Performance Considerations
+description: Performance Considerations for using RenderDraw
+published: true
+date: 2020-08-31T18:40:05.008Z
+tags: performance, browser, speed, loading
+editor: ckeditor
+-->
+
+<p>RenderDraw uses the latest in web technologies to provide an in-browser rendering experience. In order for touchable 3D to be possible, we have to ensure both WebGL and Hardware Acceleration are enabled, where available. Mobile devices have this on by default, as do tablets, but computers, specifically Windows machines struggle when Hardware Acceleration are not enabled.&nbsp;</p>
+<h2>Enabling WebGL</h2>
+<p>If your browser supports WebGL, follow these instructions to enable it:</p>
+<h3>Chrome</h3>
+<p>First, enable hardware acceleration:</p>
+<ul>
+  <li>Go to chrome://settings</li>
+  <li>Click the <strong>+ Show advanced settings</strong> button</li>
+  <li>In the <strong>System</strong> section, ensure the <strong>Use hardware acceleration when available</strong> checkbox is checked (you'll need to relaunch Chrome for any changes to take effect)</li>
+</ul>
+<p>Then inspect the status of WebGL:</p>
+<ul>
+  <li>Go to chrome://gpu</li>
+  <li>Inspect the <strong>WebGL</strong> item in the <strong>Graphics Feature Status</strong> list. The status will be one of the following:<ul>
+      <li><i>Hardware accelerated</i> — WebGL is enabled and hardware-accelerated (running on the graphics card).</li>
+      <li><i>Software only, hardware acceleration unavailable</i> — WebGL is enabled, but running in software. See <a href="http://www.chromium.org/developers/design-documents/gpu-accelerated-compositing-in-chrome#TOC-Appendix-B:-The-Software-Compositor">here</a> for more info: "For software rendering of WebGL, Chrome uses&nbsp;<a href="https://www.transgaming.com/swiftshader">SwiftShader</a>, a software GL rasterizer."</li>
+      <li><i>Unavailable</i> — WebGL is not available in hardware or software.</li>
+    </ul>
+  </li>
+</ul>
+<p>If the status is not <i>"Hardware accelerated"</i>, then the <strong>Problems Detected</strong> list (below the the&nbsp;<strong>Graphics Feature Status</strong> list) may explain why hardware acceleration is unavailable. Please consult this list before contacting our support team. If you have a display driver older than 2010, it may be the cause of the issue. Please update your display drivers and then go back to chrome://gpu again to look for problems.<br><br>Please ensure you are not using an extension that may be disabling WebGL.<br><br>&nbsp;</p>
+<h3>Opera</h3>
+<p>First, enable hardware acceleration:</p>
+<ul>
+  <li>Go to about:config</li>
+  <li>On the left hand menu, click "Browser"</li>
+  <li>Click the<strong>&nbsp;Show advanced settings</strong>&nbsp;checkbox</li>
+  <li>In the <strong>System</strong> section, ensure the <strong>Use hardware acceleration when available</strong> checkbox is checked (you'll need to relaunch Opera&nbsp;for any changes to take effect)</li>
+</ul>
+<h3>Firefox</h3>
+<p>First, enable WebGL:</p>
+<ul>
+  <li>Go to about:config</li>
+  <li>Search for webgl.disabled</li>
+  <li>Ensure that its value is false (any changes take effect immediately without relaunching Firefox)</li>
+</ul>
+<p>Then inspect the status of WebGL:</p>
+<ul>
+  <li>Go to about:support</li>
+  <li>Inspect the <strong>WebGL Renderer</strong> row in the <strong>Graphics</strong> table:<ul>
+      <li>If the status contains a graphics card manufacturer, model and driver (eg: <i>"NVIDIA Corporation -- NVIDIA GeForce GT 650M OpenGL Engine"</i>), then WebGL is enabled.</li>
+      <li>If the status is something like <i>"Blocked for your graphics card because of unresolved driver issues"</i> or <i>"Blocked for your graphics driver version"</i>, then your graphics card/driver is blacklisted.</li>
+    </ul>
+  </li>
+</ul>
+<p>(Like Chrome, Firefox has a <strong>Use hardware acceleration when available</strong> checkbox, in&nbsp;<strong>Preferences</strong> &gt; <strong>Advanced</strong> &gt; <strong>General</strong> &gt; <strong>Browsing</strong>. However, unlike Chrome, Firefox does not require this checkbox to be checked for WebGL to work.)</p>
+<h3>Safari</h3>
+<ul>
+  <li>Go to Safari's <strong>Preferences</strong></li>
+  <li>Select the <strong>Advanced</strong> tab</li>
+  <li>Ensure that the <strong>Show Develop menu in menu bar</strong> checkbox is checked</li>
+  <li>In Safari's <strong>Develop</strong> menu, ensure that <strong>Enable WebGL</strong> is checked</li>
+</ul>
