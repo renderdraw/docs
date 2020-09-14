@@ -2,24 +2,24 @@
 title: Advanced Renderer
 description: 
 published: true
-date: 2020-09-04T10:10:15.232Z
+date: 2020-09-14T15:14:03.840Z
 tags: advancedrenderer, component
 editor: ckeditor
 -->
 
 <h1>Advanced Renderer</h1>
 <h3>&nbsp;</h3>
-<h3>Background Information</h3>
+<h2>Background Information</h2>
 <p>The Advanced Renderer was created for more complex development and interaction scenarios than the SimpleRenderer component. SimpleRenderer was created for displaying 3D drawings and allowing interaction without events or selection of components within the drawing itself. &nbsp; &nbsp;</p>
 <figure class="image"><img src="/advancedrenderer_(context_actionmenu_.png"></figure>
 <p>Advanced Renderer was created to allow for the manipulation of a 3D scene within the context of a Salesforce interaction. By default, the component looks similar to the SimpleRenderer, we're drawing is displayed based off of a record ID from salesforce contact version ID from salesforce or a URL directly to t source 3-D file.&nbsp;</p>
 <p>Advanced renderer is extensible, and provides the ability to provide contextual information within our pane system. As seen in the diagram above, the context content pane is displayed when a the &nbsp;actions that are related to each individual selection with in the 3-D models on the action information pain and then any applicable side work that you might want to split based on actions or interactions</p>
 <p>&nbsp;</p>
-<h3>Usage Notes / When to use</h3>
-<p>Advanced Renderer should be used</p>
-<h4>Slots</h4>
-<p>AdvancedRenderer was designed for extensibility, with that&nbsp;</p>
-<h3>API</h3>
+<h2>Usage Notes / When to use</h2>
+<p>Advanced Renderer should be used in any custom development scenario. This component was created to allow for the contextual interaction with other data within Salesforce. If you need a custom interaction beyond 3D visualization, this component is likely what you will be using. AdvancedRenderer can be utilized in simple rendering scenarios as well, with the option of utilizing slots.</p>
+<h3>Slots</h3>
+<p>AdvancedRenderer was designed for extensibility, with that in mind, solving for every use case isn't really possible without knowing how each implementation needs to display 3D. Salesforce lightning components are composable, and the AdvancedRenderer has prebuilt slots for you to pass custom components into.&nbsp;</p>
+<h2>API</h2>
 <figure class="table">
   <table>
     <tbody>
@@ -220,7 +220,239 @@ editor: ckeditor
 </figure>
 <h4>Aura Events</h4>
 <p>&nbsp;</p>
-<h4>Attributes</h4>
-<p>&nbsp;</p>
+<h3>Methods</h3>
+<figure class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>ARGUMENTS</th>
+        <th>DESCRIPTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>addModelToScene</td>
+        <td>
+          <p><strong>nodeName</strong></p>
+          <p>string</p>
+          <p>The name of the node of the 3D node after loading</p>
+          <p><strong>URL</strong></p>
+          <p>string</p>
+          <p>The URL of the of the 3D model to load</p>
+          <p><strong>fileName</strong></p>
+          <p>string</p>
+          <p>The file name and extension of the of the 3D model being loaded</p>
+          <p><strong>parentNodeUniqueId</strong></p>
+          <p>string</p>
+          <p>The name of the parent node of the 3D node after loading</p>
+          <p><strong>positionX</strong></p>
+          <p>double</p>
+          <p>The x-coordinate position to load the model in</p>
+          <p><strong>positionY</strong></p>
+          <p>double</p>
+          <p>The y-coordinate position to load the model in</p>
+          <p><strong>positionZ</strong></p>
+          <p>double</p>
+          <p>The z-coordinate position to load the model in</p>
+          <p><strong>rotationX</strong></p>
+          <p>double</p>
+          <p>The rotation on the X axis of the model to load</p>
+          <p><strong>rotationY</strong></p>
+          <p>double</p>
+          <p>The rotation on the Y axis of the model to load</p>
+          <p><strong>rotationZ</strong></p>
+          <p>double</p>
+          <p>The rotation on the Z axis of the model to load</p>
+          <p><strong>scaleX</strong></p>
+          <p>double</p>
+          <p>The scale on the X axis of the model to load</p>
+          <p><strong>scaleY</strong></p>
+          <p>double</p>
+          <p>The scale on the Y axis of the model to load</p>
+          <p><strong>scaleZ</strong></p>
+          <p>double</p>
+          <p>The scale on the Z axis of the model to load</p>
+        </td>
+        <td>Add an additional model to the scene.</td>
+      </tr>
+      <tr>
+        <td>addWidget</td>
+        <td>
+          <p><strong>name</strong></p>
+          <p>string</p>
+          <p><strong>type</strong></p>
+          <p>string</p>
+          <p><strong>positionX</strong></p>
+          <p>string</p>
+          <p><strong>positionY</strong></p>
+          <p>string</p>
+          <p><strong>positionZ</strong></p>
+          <p>string</p>
+          <p><strong>rotationX</strong></p>
+          <p>double</p>
+          <p>The rotation on the X axis of the Widget</p>
+          <p><strong>rotationY</strong></p>
+          <p>double</p>
+          <p>The rotation on the Y axis of the Widget</p>
+          <p><strong>rotationZ</strong></p>
+          <p>double</p>
+          <p>The rotation on the Z axis of the Widget</p>
+          <p><strong>scaleX</strong></p>
+          <p>double</p>
+          <p>The scale on the X axis of the Widget</p>
+          <p><strong>scaleY</strong></p>
+          <p>double</p>
+          <p>The scale on the Y axis of the Widget</p>
+          <p><strong>scaleZ</strong></p>
+          <p>double</p>
+          <p>The scale on the Z axis of the Widget</p>
+        </td>
+        <td>Still in our 'labs' status. Adds a widget to our scene. More to come</td>
+      </tr>
+      <tr>
+        <td>aimCamera</td>
+        <td>
+          <p><strong>x</strong></p>
+          <p>double</p>
+          <p>The cameras focus on the X-Axis</p>
+          <p><strong>y</strong></p>
+          <p>double</p>
+          <p>The cameras focus on the Y-Axis</p>
+          <p><strong>z</strong></p>
+          <p>double</p>
+          <p>The cameras focus on the Z-Axis</p>
+          <p><strong>nodeName</strong></p>
+          <p>string</p>
+          <p>The name of the 3D node to focus on</p>
+        </td>
+        <td>Aim the camera in 3D space either at a component or some coordinates.</td>
+      </tr>
+      <tr>
+        <td>displayMedia</td>
+        <td>
+          <p><strong>imageURL</strong></p>
+          <p>string</p>
+          <p>The fully qualified url of the image to display, e.g. https://files.renderdraw.us/public/images/2020RDLogo.png</p>
+          <p><strong>allowClose</strong></p>
+          <p>boolean</p>
+          <p>Allow for users to close the displayed media</p>
+        </td>
+        <td>Display related media instead of the 3D drawing</td>
+      </tr>
+      <tr>
+        <td>getCameraPositionandTarget</td>
+        <td>&nbsp;</td>
+        <td>Fetch the camera's current position and where it is aiming.</td>
+      </tr>
+      <tr>
+        <td>getHierarchy</td>
+        <td>&nbsp;</td>
+        <td>Fetch the 3D model's hierarchy. Must subscribe to RDraw:EVT_Renderer_Get_Hierarchy for response</td>
+      </tr>
+      <tr>
+        <td>hideMedia</td>
+        <td>&nbsp;</td>
+        <td>Hide displayed related media that is presented in the content area of this component</td>
+      </tr>
+      <tr>
+        <td>loadAndApplyTextureToModel</td>
+        <td>&nbsp;</td>
+        <td>Load a texture and add it to a model.</td>
+      </tr>
+      <tr>
+        <td>positionCamera</td>
+        <td>
+          <p><strong>x</strong></p>
+          <p>double</p>
+          <p>The cameras position on the X-Axis</p>
+          <p><strong>y</strong></p>
+          <p>double</p>
+          <p>The cameras position on the Y-Axis</p>
+          <p><strong>z</strong></p>
+          <p>double</p>
+          <p>The cameras position on the Z-Axis</p>
+          <p><strong>alpha</strong></p>
+          <p>double</p>
+          <p>Defines the camera rotation along the logitudinal axis</p>
+          <p><strong>beta</strong></p>
+          <p>double</p>
+          <p>Defines the camera rotation along the latitudinal axis</p>
+        </td>
+        <td>Position the camera in 3D space.</td>
+      </tr>
+      <tr>
+        <td>removeComponent</td>
+        <td>
+          <p><strong>uniqueId</strong></p>
+          <p>string</p>
+          <p>The uniqueId to find and remove.</p>
+        </td>
+        <td>Removes the given component from a scene</td>
+      </tr>
+      <tr>
+        <td>resetCamera</td>
+        <td>&nbsp;</td>
+        <td>Reset the camera to it's initial position in the scene</td>
+      </tr>
+      <tr>
+        <td>selectComponent</td>
+        <td>
+          <p><strong>name</strong></p>
+          <p>string</p>
+          <p>The name of the node to select. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>id</strong></p>
+          <p>string</p>
+          <p>The id of the node to select. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>uniqueId</strong></p>
+          <p>string</p>
+          <p>The uniqueId of the node to select. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>context</strong></p>
+          <p>object</p>
+          <p><strong>ignoreList</strong></p>
+          <p>string[]</p>
+          <p>The list of node names to skip when traversing the 3D model to find the node</p>
+        </td>
+        <td>Programmatically select a component node within the 3D model. Raises RDraw:EVT_Renderer_Mesh_Selected on successful selection</td>
+      </tr>
+      <tr>
+        <td>toggleEnableComponent</td>
+        <td>
+          <p><strong>name</strong></p>
+          <p>string</p>
+          <p>The name to enable/disable. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>id</strong></p>
+          <p>string</p>
+          <p>The id to enable/disable. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>uniqueId</strong></p>
+          <p>string</p>
+          <p>The uniqueId to enable/disable. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>isEnabled</strong></p>
+          <p>boolean</p>
+          <p>Ensure the component is enabled regardless of its current state</p>
+        </td>
+        <td>Enable or disable a given 3D node by passing a uniqueId, name or id</td>
+      </tr>
+      <tr>
+        <td>updateComponentColor</td>
+        <td>
+          <p><strong>name</strong></p>
+          <p>string</p>
+          <p>The name of the node to update. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>id</strong></p>
+          <p>string</p>
+          <p>The id of the node to update. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>uniqueId</strong></p>
+          <p>string</p>
+          <p>The uniqueId of the node to update. Use only one of name, id, uniqueId (uniqueId being most specific)</p>
+          <p><strong>colorHex</strong></p>
+          <p>string</p>
+          <p>The hex color to update the node with</p>
+        </td>
+        <td>Update a given 3D component node to the passed hex color code.</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 <h3>Example</h3>
 <p>&nbsp;</p>
