@@ -2,19 +2,25 @@
 title: Simple Renderer
 description: 
 published: true
-date: 2020-09-19T11:30:36.077Z
+date: 2020-09-19T11:46:26.919Z
 tags: component, simplerenderer
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:45.190Z
 -->
 
-<h2>Description</h2>
+<h2>Background Information</h2>
+<p>SimpleRenderer is our first component made strictly for natively rendering a 3D drawing file within Salesforce. Once loaded, the drawing takes center stage while allowing for users to interact by mouse.</p>
 <h2>When to use the Simple Renderer</h2>
-<p>Anywhere you want to visualise information or . Although the SimpleRenderer is a global component, you likely want to develop with our <a href="/components/AdvancedRenderer">AdvancedRenderer.</a></p>
-<h2>RDraw:SimpleRenderer</h2>
-<p>&nbsp;</p>
+<p>Use the SimpleRenderer wherever you would use a product or component image. SimpleRenderer has no supported global methods, Although the SimpleRenderer is a global component, you likely want to develop with our <a href="/components/AdvancedRenderer">AdvancedRenderer.</a></p>
+<h2>Usage notes</h2>
+<p>SimpleRenderer requires one of the following attributes in order to render a drawing on the screen:</p>
+<ul>
+  <li>contentVersionId</li>
+  <li>recordId</li>
+  <li>overrideURL</li>
+</ul>
+<p>Using the recordId will rely on<a href="/getstarted/relationship"> setting up a relationship</a> through the settings app.&nbsp;</p>
 <h2>Attributes</h2>
-<p>&nbsp;</p>
 <figure class="table">
   <table style="border-bottom:none;border-left:none;border-right:none;border-top:none;">
     <tbody>
@@ -133,5 +139,10 @@ dateCreated: 2020-09-18T21:21:45.190Z
     </tbody>
   </table>
 </figure>
+<h2>Events</h2>
+<h3>Raised</h3>
+<p>&nbsp;</p>
+<h3>Handled</h3>
+<p>&nbsp;</p>
 <h2>Examples</h2>
 <p>&nbsp;</p>
