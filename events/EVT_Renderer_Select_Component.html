@@ -1,0 +1,77 @@
+<!--
+title: EVT_Renderer_Select_Component
+description: 
+published: true
+date: 2020-09-19T12:50:19.807Z
+tags: events, evt_renderer_select_component
+editor: ckeditor
+dateCreated: 2020-09-19T12:50:19.807Z
+-->
+
+<h2>RDraw:EVT_Renderer_Select_Component</h2>
+<h3>Usage Notes</h3>
+<p>This event is raised a subcomponent of a 3D drawing is selected using ComponentTouch. handling this event &nbsp;</p>
+<h3>Parameters</h3>
+<figure class="table" style="width:1369px;">
+  <table style="border-bottom:1px solid rgb(221, 219, 218);border-top:1px solid rgb(221, 219, 218);">
+    <thead>
+      <tr>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>NAME</strong></th>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>TYPE</strong></th>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>REQUIRED</strong></th>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>DESCRIPTION</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th style="background-color: ;border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">context</th>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">object</td>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">&nbsp;</td>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">Additional information provided with the selection of a component.</td>
+      </tr>
+      <tr>
+        <th style="background-color: ;border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">id</th>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">string</td>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">&nbsp;</td>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">The Id of the component selected&nbsp;</td>
+      </tr>
+      <tr>
+        <th style="background-color: ;border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">name</th>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">string</td>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">&nbsp;</td>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">The name of the component selected</td>
+      </tr>
+      <tr>
+        <th style="background-color: ;border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">uniqueId</th>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">string</td>
+        <td style="border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">&nbsp;</td>
+        <td>The uniqueId of the component selected.&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h3>Example Usage</h3>
+<p>Component</p>
+<pre><code class="language-html">  &lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"&gt;
+  &lt;aura:handler name="selectComponent" event="RDraw:EVT_Renderer_Select_Component"
+        action="{!c.handleSelectComponent}" /&gt;
+  &lt;RDraw:AdvancedRenderer displayContext="true" aura:id="renderer"
+                            nodeIgnoreList="{!v.excludeMeshNames}" displayContextDetails="{!v.displayQuoteLineDetails}"
+                            displaySidebar="{!v.showSidebar}" size="Medium" allowSelection="true"
+                            brandImageURL="{!v.brandImageURL}" recordId="{!v.selectedQuoteLineId}"&gt;
+                            ... 
+                            &lt;/RDraw:AdvancedRenderer&gt;
+  &lt;/aura:component&gt;</code></pre>
+<p>Controller</p>
+<pre><code class="language-javascript">[{
+ handleSelectComponent: function (component, event, helper) {
+        let renderer = component.find('renderer');
+        let functionParams = event.getParams();
+        renderer.selectComponent(functionParams.arguments.name,
+            functionParams.arguments.id,
+            functionParams.arguments.uniqueId, undefined,
+            component.get('v.nameIgnoreList')
+        );
+    },
+}]</code></pre>
+<p>.</p>
