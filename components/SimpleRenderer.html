@@ -2,123 +2,136 @@
 title: Simple Renderer
 description: 
 published: true
-date: 2020-07-30T12:49:06.225Z
+date: 2020-09-19T11:29:44.017Z
 tags: component, simplerenderer
 editor: ckeditor
+dateCreated: 2020-09-18T21:21:45.190Z
 -->
 
 <h2>Description</h2>
 <h2>When to use the Simple Renderer</h2>
 <p>Anywhere you want to visualise information or . Although the SimpleRenderer is a global component, you likely want to develop with our <a href="/components/AdvancedRenderer">AdvancedRenderer.</a></p>
 <h2>RDraw:SimpleRenderer</h2>
-<p>Cards are used to apply a container around a related grouping of information.</p>
-<figure class="table">
-  <table>
-    <tbody>
-      <tr>
-        <th>Support:</th>
-        <td>GA</td>
-      </tr>
-      <tr>
-        <th>Access:</th>
-        <td>global</td>
-      </tr>
-      <tr>
-        <th>Abstract:</th>
-        <td>false</td>
-      </tr>
-      <tr>
-        <th>Extensible:</th>
-        <td>false</td>
-      </tr>
-      <tr>
-        <th>Interfaces:</th>
-        <td>&nbsp;</td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-<h2>Attributes</h2>
-<figure class="table">
-  <table>
-    <thead>
-      <tr>
-        <th>NAME</th>
-        <th>TYPE</th>
-        <th>ACCESS</th>
-        <th>REQUIRED</th>
-        <th>DEFAULT</th>
-        <th>&nbsp;</th>
-        <th>DESCRIPTION</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>actions</td>
-        <td>component[]</td>
-        <td>global</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
 <p>&nbsp;</p>
+<h2>Attributes</h2>
+<p>&nbsp;</p>
+<figure class="table" style="width:0px;">
+  <table style="background-color: ;border-bottom:none;border-left:none;border-right:none;border-top:none;">
+    <tbody>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;"><strong>NAME</strong></td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;"><strong>TYPE</strong></td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;"><strong>REQUIRED</strong></td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;"><strong>DEFAULT</strong></td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;"><strong>DESCRIPTION</strong></td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">allowSelection</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">Allow users to select part of a model, and raise an event based on what is selected</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">brandImageURL</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">string</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">URL for brand image to be displayed in the bottom right of the rendering canvas. This will be displayed at a width of 120px</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">contentVersionId</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">string</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">Id of the Salesforce Content Version where the binary rendering is stored</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">environmentColor</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">string</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">#e1f5fc</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">Hex code for the background color of the 3D scene in #xxxxxx format (including #)</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">overrideURL</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">string</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">URL where your drawing can be fetched (ignores underlying relationships)</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">recordId</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">string</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;"><a href="https://ability-ruby-6013-dev-ed.lightning.force.com/docs/component-library/bundle/force:hasRecordId">Inherited from force:hasRecordId</a><br>The record Id</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">showActionMenu</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">TRUE</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">Display the action menu to users, allowing for screenshots, changing of scene elements and more</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">showUserMessages</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">FALSE</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">Display messages during the rendering loop to the user. These display in the bottom left corner of the component and automatically disappear as new messages are displayed, or after 2 seconds has passed</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">size</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">string</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">Medium</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">The size of the component on the page</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">useCommunities</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">If you are using the SimpleRenderer within a Community, this is required to fetch resources based on the current community url path</td>
+      </tr>
+      <tr>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">userInteracted</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="background-color: ;padding:2px 3px;vertical-align:bottom;">FALSE</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">Is set to true when a user drags, points, scrolls or clicks on the rendering</td>
+      </tr>
+      <tr>
+        <td style="padding:2px 3px;vertical-align:bottom;">showUserMessages</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;text-align:center;vertical-align:bottom;">FALSE</td>
+        <td style="padding:2px 3px;vertical-align:bottom;"><code>Display messages during the rendering loop to the user. These display in the bottom left corner of the component and automatically disappear as new messages are displayed, or after 2 seconds has passed</code></td>
+      </tr>
+      <tr>
+        <td style="padding:2px 3px;vertical-align:bottom;">size</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">string</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">Medium</td>
+        <td style="padding:2px 3px;vertical-align:bottom;"><code>The size of the component on the page</code></td>
+      </tr>
+      <tr>
+        <td style="padding:2px 3px;vertical-align:bottom;">useCommunities</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;vertical-align:bottom;"><code>If you are using the SimpleRenderer within a Community, this is required to fetch resources based on the current community url path</code></td>
+      </tr>
+      <tr>
+        <td style="padding:2px 3px;vertical-align:bottom;">userInteracted</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">boolean</td>
+        <td style="padding:2px 3px;vertical-align:bottom;">&nbsp;</td>
+        <td style="padding:2px 3px;text-align:center;vertical-align:bottom;">FALSE</td>
+        <td style="padding:2px 3px;vertical-align:bottom;"><code>Is set to true when a user drags, points, scrolls or clicks on the rendering</code></td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 <h2>Examples</h2>
 <p>&nbsp;</p>
