@@ -1,0 +1,76 @@
+<!--
+title: EVT_Renderer_Get_CameraPositionandTarget
+description: 
+published: true
+date: 2020-09-20T19:48:27.392Z
+tags: events, evt_renderer_get_camerapositionandtarget
+editor: ckeditor
+dateCreated: 2020-09-20T19:48:27.392Z
+-->
+
+<h2>RDraw:EVT_Renderer_Get_CameraPositionandTarget</h2>
+<h3>Usage Notes</h3>
+<p>This event is raised when <strong>getCameraPositionandTarget</strong> is called on the AdvancedRenderer component. It returns a single. Handling this event allows for the receiving &nbsp;of the details of that 3D node. These details can be used to apply 3D effects to the scene, or by looking up related data within the Salesforce platform.</p>
+<h3>Parameters</h3>
+<figure class="table" style="width:1369px;">
+  <table style="border-bottom:1px solid rgb(221, 219, 218);border-top:1px solid rgb(221, 219, 218);">
+    <thead>
+      <tr>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>NAME</strong></th>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>TYPE</strong></th>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>REQUIRED</strong></th>
+        <th style="background-color: ;padding:0.25rem 0.5rem;"><strong>DESCRIPTION</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th style="background-color: ;border-top:1px rgb(221, 219, 218);padding:0.25rem 0.5rem;">data</th>
+        <td style="background-color: ;border-top:1px rgb(221, 219, 218);padding:0.25rem 0.5rem;">object</td>
+        <td style="background-color: ;border-top:1px rgb(221, 219, 218);padding:0.25rem 0.5rem;">Yes</td>
+        <td style="background-color: ;">The camera's position returned in JSON object format</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h4>“data” parameter structure</h4>
+<pre><code class="language-javascript">{
+   "target": object,
+   "position": {
+            "x": number,
+            "y": number,
+            "z": number,
+            "alpha": number
+            "beta": number
+        }
+}</code></pre>
+<h3><br>Example Usage</h3>
+<p>Choosing where to aim the camera is important when displaying 3D diagrams to users. Often, its easier to navigate where you want the users to look and get the position of the camera in order to re-use as part of a scene or a configuration.To do this, simply call the <strong>getCameraPositionandTarget&nbsp;</strong> on the instance of your renderer, after subscribing to the message type and you'll receive the position in JSON format.</p>
+<p>Component</p>
+<pre><code class="language-html">  &lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"&gt;
+      &lt;aura:handler name="getCameraPostionandTarget" event="RDraw:EVT_Renderer_Get_CameraPositionandTarget"
+        action="{!c.handleGetCameraPositionsandTarget}" /&gt;
+         &lt;lightning:card title="Get Camera Position"&gt;
+         	&lt;p class="slds-p-horizontal_small"&gt;
+               &lt;lightning:button title="Get Position"
+                   onclick="{!c.handleGetCameraPositionButtonClicked}"&gt;Get Position
+               &lt;/lightning:button&gt;
+            &lt;/p&gt;
+        &lt;/lightning:card&gt;
+  		&lt;RDraw:AdvancedRenderer displayContext="true" aura:id="renderer"
+                            nodeIgnoreList="{!v.excludeMeshNames}" displayContextDetails="{!v.displayQuoteLineDetails}"
+                            displaySidebar="{!v.showSidebar}" size="Medium" allowSelection="true"
+                            brandImageURL="{!v.brandImageURL}" recordId="{!v.selectedQuoteLineId}"&gt;
+                            ... 
+                            &lt;/RDraw:AdvancedRenderer&gt;
+  &lt;/aura:component&gt;</code></pre>
+<p>Controller</p>
+<pre><code class="language-javascript">[{
+	handleGetCameraPositionButtonClicked: function (component, event, helper) {
+        let renderer = component.find('renderer');
+        renderer.getCameraPositionandTarget();
+    },
+    handleGetCameraPositionsandTarget: function (component, event, helper) {
+        alert(JSON.stringify(event.getParam('data'), null, 2))
+    },
+}]</code></pre>
+<p>&nbsp;</p>
