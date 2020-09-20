@@ -2,7 +2,7 @@
 title: EVT_Renderer_Select_Component
 description: 
 published: true
-date: 2020-09-20T14:50:37.656Z
+date: 2020-09-20T14:52:38.429Z
 tags: events, evt_renderer_select_component
 editor: ckeditor
 dateCreated: 2020-09-19T12:50:19.807Z
@@ -51,6 +51,7 @@ dateCreated: 2020-09-19T12:50:19.807Z
   </table>
 </figure>
 <h3>Example Usage</h3>
+<p>On selection of a 3D component subnode, the <code>RDraw:EVT_Renderer_Select_Component</code> event is raised, passing the id, name and uniqueId. These can then be processed/linked to a Salesforce record or process.&nbsp;</p>
 <p>Component</p>
 <pre><code class="language-html">  &lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"&gt;
   &lt;aura:handler name="selectComponent" event="RDraw:EVT_Renderer_Select_Component"
@@ -74,4 +75,4 @@ dateCreated: 2020-09-19T12:50:19.807Z
         );
     },
 }]</code></pre>
-<p>.</p>
+<p>&nbsp;</p>
