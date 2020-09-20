@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: The
 published: true
-date: 2020-09-20T19:54:05.410Z
+date: 2020-09-20T19:55:04.180Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -31,7 +31,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td><strong>DESCRIPTION</strong></td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>actionInformationPane</h2>
         </td>
         <td>component[]</td>
@@ -41,7 +41,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The horizontal slot available above the 3D model. This is typically used for Actions related to what is being rendered (e.g. Create a Case)</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>allowSelection</h2>
         </td>
         <td>boolean</td>
@@ -51,7 +51,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Allow the selection of subcomponents either by ComponentTouch(Click) or programmatically using the selectComponent method</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>brandImageURL</h2>
         </td>
         <td>string</td>
@@ -61,7 +61,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The branded logo image displayed in the bottom right corner of the rendering components. Pass an empty string if no branding is desired.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>contentVersionId</h2>
         </td>
         <td>string</td>
@@ -71,7 +71,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The content version to render (if rendering from Salesforce servers/files). Using contentversionid will bypass the standard recordId and the overrideURL</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>contextContent</h2>
         </td>
         <td>component[]</td>
@@ -81,7 +81,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The Salesforce Lightning components to be displayed on the context pane (left side slot, representing context to what is being rendered.)</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>contextDetailContent</h2>
         </td>
         <td>component[]</td>
@@ -91,7 +91,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The Salesforce Lightning components to be displayed on the context detail pane (left side slot, representing details to the context of what is being rendered.) This is typically displayed based on some action that happened within the contextContent compontrets, e.g. list order items, then dive into the details of a particular line.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>contextDetailHeaderText</h2>
         </td>
         <td>string</td>
@@ -101,7 +101,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The header text that is displayed next to the back button on the contextDetail facet. This describes the content that is passed via contextDetailsContent, typically the name of a line item or detail item within a list presented in the contextContent</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>displayActionInformationPane</h2>
         </td>
         <td>boolean</td>
@@ -111,7 +111,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Whether or not to display the Action information pane slot (top slot) and components passed into actionInformationPane parameter</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>displayActionInformationPaneOnSelection</h2>
         </td>
         <td>boolean</td>
@@ -121,7 +121,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Whether or not to display the Action information pane slot (top slot) when a selection is made via ComponentTouch or programmatically</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>displayContext</h2>
         </td>
         <td>boolean</td>
@@ -131,7 +131,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Whether or not to display the context slot (left side slot) and components passed into contextContent parameter</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>displayContextDetails</h2>
         </td>
         <td>boolean</td>
@@ -141,7 +141,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Whether or not to display the context slot details and components passed into contextDetailContent parameter. Use this for displaying detail components related to contextContent, e.g. Line item details for for an order item listed in contextContent. This cannot be used at the same time as displayContext</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>displaySidebar</h2>
         </td>
         <td>boolean</td>
@@ -151,7 +151,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Whether or not to display the sidebar slot (right side slot) and components passed into sidebarContent parameter</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>environmentColor</h2>
         </td>
         <td>string</td>
@@ -161,7 +161,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The background color of the 3D environment. Use Hex code format, such as #ffffff</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>loadingImage</h2>
         </td>
         <td>string</td>
@@ -171,7 +171,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The image URL to display while the 3D model is loading</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>nodeIgnoreList</h2>
         </td>
         <td>string[]</td>
@@ -181,7 +181,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>A list of strings that contain names of nodes to ignore when traversing the 3D structure during ComponentTouch or Finding a component by name</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>overrideURL</h2>
         </td>
         <td>string</td>
@@ -191,7 +191,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The absolute URL to render.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>recordId</h2>
         </td>
         <td>string</td>
@@ -201,7 +201,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Id of the Salesforce Record in which you fetch the associated rendering (Using relationships)</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>showUserMessages</h2>
         </td>
         <td>boolean</td>
@@ -211,7 +211,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Show rendering related messages to the user. This is typically used in debug scenarios</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>sidebarContent</h2>
         </td>
         <td>component[]</td>
@@ -221,7 +221,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>The vertical slot available to the right of the 3D model. This is typically used for Detailed information related to the result of a ComponentTouch on a model (e.g. selection of a subcomponent within a model for checking on warranty information).</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>size</h2>
         </td>
         <td>string</td>
@@ -231,7 +231,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Size of the component, either Stretch, Small, Medium, Large, Jumbo</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>spitShine</h2>
         </td>
         <td>boolean</td>
@@ -241,7 +241,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Add a shine to your model, even if the materials loaded have no reflection</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>useCommunities</h2>
         </td>
         <td>boolean</td>
@@ -251,7 +251,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Fixes the fetching of files and metadata when utilizing a Community</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>userInteracted</h2>
         </td>
         <td>boolean</td>
@@ -312,7 +312,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>addModelToScene</h2>
         </td>
         <td>
@@ -359,7 +359,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Add an additional model to the scene.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>addWidget</h2>
         </td>
         <td>
@@ -395,7 +395,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Still in our 'labs' status. Adds a widget to our scene. More to come</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>aimCamera</h2>
         </td>
         <td>
@@ -415,7 +415,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Aim the camera in 3D space either at a component or some coordinates.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>displayMedia</h2>
         </td>
         <td>
@@ -429,35 +429,35 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Display related media instead of the 3D drawing</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>getCameraPositionandTarget</h2>
         </td>
         <td>&nbsp;</td>
         <td>Fetch the camera's current position and where it is aiming.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>getHierarchy</h2>
         </td>
         <td>&nbsp;</td>
         <td>Fetch the 3D model's hierarchy. Must subscribe to RDraw:EVT_Renderer_Get_Hierarchy for response</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>hideMedia</h2>
         </td>
         <td>&nbsp;</td>
         <td>Hide displayed related media that is presented in the content area of this component</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>loadAndApplyTextureToModel</h2>
         </td>
         <td>&nbsp;</td>
         <td>Load a texture and add it to a model.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>positionCamera</h2>
         </td>
         <td>
@@ -480,7 +480,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Position the camera in 3D space.</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>removeComponent</h2>
         </td>
         <td>
@@ -491,14 +491,14 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Removes the given component from a scene</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>resetCamera</h2>
         </td>
         <td>&nbsp;</td>
         <td>Reset the camera to it's initial position in the scene</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>selectComponent</h2>
         </td>
         <td>
@@ -520,7 +520,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Programmatically select a component node within the 3D model. Raises RDraw:EVT_Renderer_Mesh_Selected on successful selection</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>toggleEnableComponent</h2>
         </td>
         <td>
@@ -540,7 +540,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Enable or disable a given 3D node by passing a uniqueId, name or id</td>
       </tr>
       <tr>
-        <td>
+        <td style="vertical-align:top;">
           <h2>updateComponentColor</h2>
         </td>
         <td>
