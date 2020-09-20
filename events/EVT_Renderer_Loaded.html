@@ -2,10 +2,32 @@
 title: EVT_Renderer_Loaded
 description: 
 published: true
-date: 2020-09-19T12:31:51.408Z
+date: 2020-09-20T13:59:43.207Z
 tags: events, evt_renderer_loaded
 editor: ckeditor
 dateCreated: 2020-09-19T12:31:51.408Z
 -->
 
-<h3>EVT_Renderer_Loaded</h3>
+<h2>RDraw:EVT_Renderer_Loaded</h2>
+<h3>Usage Notes</h3>
+<p>This event is raised when the renderer has created a scene and fully loaded a 3D drawing into that scene.&nbsp;</p>
+<h3>Parameters</h3>
+<p>There are no parameters for this event, it is only to notify the consuming component when a scene is displayed</p>
+<h3>Example Usage</h3>
+<p>Component</p>
+<pre><code class="language-html">  &lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"&gt;
+  &lt;aura:handler name="rendererLoaded" event="RDraw:EVT_Renderer_Loaded" action="{!c.handleRendererLoaded}" /&gt;
+  &lt;RDraw:AdvancedRenderer displayContext="true" aura:id="renderer"
+                            nodeIgnoreList="{!v.excludeMeshNames}" displayContextDetails="{!v.displayQuoteLineDetails}"
+                            displaySidebar="{!v.showSidebar}" size="Medium" allowSelection="true"
+                            brandImageURL="{!v.brandImageURL}" recordId="{!v.selectedQuoteLineId}"&gt;
+                            ... 
+                            &lt;/RDraw:AdvancedRenderer&gt;
+  &lt;/aura:component&gt;</code></pre>
+<p>Controller</p>
+<pre><code class="language-javascript">[{
+ 	handleRendererLoaded: function (component, event, helper) {
+       	//display options for configuration or add items to the scene based off it loading
+    },
+}]</code></pre>
+<p>.</p>
