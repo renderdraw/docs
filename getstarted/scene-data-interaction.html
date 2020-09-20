@@ -2,7 +2,7 @@
 title: 3D Scene Data Interaction
 description: 
 published: true
-date: 2020-09-20T14:01:39.519Z
+date: 2020-09-20T14:45:08.010Z
 tags: advancedrenderer, component, events, data
 editor: ckeditor
 dateCreated: 2020-09-18T21:22:10.107Z
@@ -18,8 +18,453 @@ dateCreated: 2020-09-18T21:22:10.107Z
 </ul>
 <p>We have setup functions on our AdvancedRenderer component to retrieve this information, to then use it in future functional calls, but in order to maintain our unidirectional dataflow, we reply using events.&nbsp;</p>
 <p>A data retrieving function will raise an event on successful calling, let's take a look at an example from the list above.&nbsp;</p>
+<p>Component</p>
+<pre><code class="language-html">&lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"
+   access="public"&gt;
+    &lt;aura:handler name="componentSelected" event="RDraw:EVT_Renderer_Mesh_Selected"
+        action="{!c.handleComponentSelected}" /&gt;
+    &lt;aura:handler name="selectionCleared" event="RDraw:EVT_Renderer_Mesh_Selection_Cleared"
+        action="{!c.handleSelectionCleared}" /&gt;
+    &lt;aura:handler name="getCameraPostionandTarget" event="RDraw:EVT_Renderer_Get_CameraPositionandTarget"
+        action="{!c.handleGetCameraPositionsandTarget}" /&gt;
+    &lt;aura:handler name="hierarchyFetched" event="RDraw:EVT_Renderer_Get_Hierarchy" action="{!c.handleGetHierarchy}" /&gt;
+
+&lt;RDraw:AdvancedRenderer aura:id="renderer" displayContext="true" spitShine="true"
+    allowSelection="true" recordId="{!v.recordId}" size="Medium"&gt;
+   &lt;aura:set attribute="contextContent"&gt;
+       &lt;lightning:card title="Get Hierarchy"&gt;
+          &lt;p class="slds-p-horizontal_small"&gt;
+              &lt;!-- button for image replacement --&gt;
+              &lt;lightning:button title="Get Hierarchy"
+                  onclick="{!c.handleTestGetHierarchy}"&gt;Get Hierarchy
+              &lt;/lightning:button&gt;
+          &lt;/p&gt;
+      &lt;/lightning:card&gt;
+   &lt;/aura:set&gt;
+&lt;/aura:component&gt;</code></pre>
+<p>Controller</p>
+<pre><code class="language-javascript">({
+    handleTestGetHierarchy: function (component, event, helper) {
+        let renderer = component.find('renderer');
+        renderer.getHierarchy();
+    },
+    handleGetHierarchy: function (component, event, helper) {
+        alert(JSON.stringify(event.getParam('data'), null, 2))
+    },
+    
+    handleGetCameraPositionsandTarget: function (component, event, helper) {
+        alert(JSON.stringify(event.getParam('data'), null, 2))
+    },
+     handleComponentSelected: function (component, event, helper) {
+        alert('Selected name = ' + event.getParams().name);
+        //todo do something with the selected component data like fetch salesforce data 
+    },
+    
+})</code></pre>
+<p>Example Data Response</p>
+<pre><code class="language-javascript">{
+    "id":"__root__",
+    "name":"__root__",
+    "uniqueId":69,
+    "children":[
+        {
+            "id":"04_ASSY_131029_STRIPPED_ASM",
+            "name":"04_ASSY_131029_STRIPPED_ASM",
+            "uniqueId":70,
+            "children":[
+                {
+                    "id":"4_INCH_ASSY_20131029",
+                    "name":"4_INCH_ASSY_20131029",
+                    "uniqueId":71,
+                    "children":[
+                        {
+                            "id":"4_INCH_ASSY_20131029_ASM",
+                            "name":"4_INCH_ASSY_20131029_ASM",
+                            "uniqueId":72,
+                            "children":[
+                                {
+                                    "id":"130529_4_BEZEL_FANGATE",
+                                    "name":"130529_4_BEZEL_FANGATE",
+                                    "uniqueId":73,
+                                    "children":[
+                                        {
+                                            "id":"130529_4_BEZEL_FANGATE",
+                                            "name":"130529_4_BEZEL_FANGATE",
+                                            "uniqueId":74,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_TOUCHPANEL_V17",
+                                    "name":"E1_04_TOUCHPANEL_V17",
+                                    "uniqueId":78,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_TOUCHPANEL_V17",
+                                            "name":"E1_04_TOUCHPANEL_V17",
+                                            "uniqueId":79,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"FINAL_CLAMP_130705",
+                                    "name":"FINAL_CLAMP_130705",
+                                    "uniqueId":81,
+                                    "children":[
+                                        {
+                                            "id":"FINAL_CLAMP_130705",
+                                            "name":"FINAL_CLAMP_130705",
+                                            "uniqueId":82,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"FINAL_CLAMP_130705",
+                                    "name":"FINAL_CLAMP_130705",
+                                    "uniqueId":84,
+                                    "children":[
+                                        {
+                                            "id":"FINAL_CLAMP_130705",
+                                            "name":"FINAL_CLAMP_130705",
+                                            "uniqueId":85,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"FINAL_CLAMP_130705",
+                                    "name":"FINAL_CLAMP_130705",
+                                    "uniqueId":87,
+                                    "children":[
+                                        {
+                                            "id":"FINAL_CLAMP_130705",
+                                            "name":"FINAL_CLAMP_130705",
+                                            "uniqueId":88,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"FINAL_CLAMP_130705",
+                                    "name":"FINAL_CLAMP_130705",
+                                    "uniqueId":90,
+                                    "children":[
+                                        {
+                                            "id":"FINAL_CLAMP_130705",
+                                            "name":"FINAL_CLAMP_130705",
+                                            "uniqueId":91,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"BATTERY_COVER",
+                                    "name":"BATTERY_COVER",
+                                    "uniqueId":93,
+                                    "children":[
+                                        {
+                                            "id":"BATTERY_COVER",
+                                            "name":"BATTERY_COVER",
+                                            "uniqueId":94,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_SCREW_P_M3X10_V17",
+                                    "name":"E1_04_SCREW_P_M3X10_V17",
+                                    "uniqueId":96,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_SCREW_P_M3X10_V17",
+                                            "name":"E1_04_SCREW_P_M3X10_V17",
+                                            "uniqueId":97,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_GASKET_V17",
+                                    "name":"E1_04_GASKET_V17",
+                                    "uniqueId":99,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_GASKET_V17",
+                                            "name":"E1_04_GASKET_V17",
+                                            "uniqueId":100,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_SCREW_P_M3X10_V17",
+                                    "name":"E1_04_SCREW_P_M3X10_V17",
+                                    "uniqueId":102,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_SCREW_P_M3X10_V17",
+                                            "name":"E1_04_SCREW_P_M3X10_V17",
+                                            "uniqueId":103,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_CPU_ASSY_V17_ASM",
+                                    "name":"E1_04_CPU_ASSY_V17_ASM",
+                                    "uniqueId":105,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_CPU_ASSY_V17_ASM_ASM",
+                                            "name":"E1_04_CPU_ASSY_V17_ASM_ASM",
+                                            "uniqueId":106,
+                                            "children":[
+                                                {
+                                                    "id":"E1_04_USB_A_CN_V17",
+                                                    "name":"E1_04_USB_A_CN_V17",
+                                                    "uniqueId":107,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_USB_A_CN_V17",
+                                                            "name":"E1_04_USB_A_CN_V17",
+                                                            "uniqueId":108,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_CPUBOARD_V17",
+                                                    "name":"E1_04_CPUBOARD_V17",
+                                                    "uniqueId":110,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_CPUBOARD_V17",
+                                                            "name":"E1_04_CPUBOARD_V17",
+                                                            "uniqueId":111,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_BATTERY_HODER_V17",
+                                                    "name":"E1_04_BATTERY_HODER_V17",
+                                                    "uniqueId":113,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_BATTERY_HODER_V17",
+                                                            "name":"E1_04_BATTERY_HODER_V17",
+                                                            "uniqueId":114,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_LAN_CN_A_V17",
+                                                    "name":"E1_04_LAN_CN_A_V17",
+                                                    "uniqueId":116,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_LAN_CN_A_V17",
+                                                            "name":"E1_04_LAN_CN_A_V17",
+                                                            "uniqueId":117,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_SDCARD_COVER_V17",
+                                                    "name":"E1_04_SDCARD_COVER_V17",
+                                                    "uniqueId":119,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_SDCARD_COVER_V17",
+                                                            "name":"E1_04_SDCARD_COVER_V17",
+                                                            "uniqueId":120,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_USB_B_CN_V17",
+                                                    "name":"E1_04_USB_B_CN_V17",
+                                                    "uniqueId":122,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_USB_B_CN_V17",
+                                                            "name":"E1_04_USB_B_CN_V17",
+                                                            "uniqueId":123,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"POWER_CN_WIRE_111228",
+                                                    "name":"POWER_CN_WIRE_111228",
+                                                    "uniqueId":125,
+                                                    "children":[
+                                                        {
+                                                            "id":"POWER_CN_WIRE_111228",
+                                                            "name":"POWER_CN_WIRE_111228",
+                                                            "uniqueId":126,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_POWER_CN_V17",
+                                                    "name":"E1_04_POWER_CN_V17",
+                                                    "uniqueId":128,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_POWER_CN_V17",
+                                                            "name":"E1_04_POWER_CN_V17",
+                                                            "uniqueId":129,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_LAN_CN_B_V17",
+                                                    "name":"E1_04_LAN_CN_B_V17",
+                                                    "uniqueId":131,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_LAN_CN_B_V17",
+                                                            "name":"E1_04_LAN_CN_B_V17",
+                                                            "uniqueId":132,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id":"E1_04_SD_CARD_V17",
+                                                    "name":"E1_04_SD_CARD_V17",
+                                                    "uniqueId":134,
+                                                    "children":[
+                                                        {
+                                                            "id":"E1_04_SD_CARD_V17",
+                                                            "name":"E1_04_SD_CARD_V17",
+                                                            "uniqueId":135,
+                                                            "children":[
+                                                                
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_SCREW_P_M3X10_V17",
+                                    "name":"E1_04_SCREW_P_M3X10_V17",
+                                    "uniqueId":137,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_SCREW_P_M3X10_V17",
+                                            "name":"E1_04_SCREW_P_M3X10_V17",
+                                            "uniqueId":138,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_SD_CAP_V26",
+                                    "name":"E1_04_SD_CAP_V26",
+                                    "uniqueId":140,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_SD_CAP_V26",
+                                            "name":"E1_04_SD_CAP_V26",
+                                            "uniqueId":141,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_ALMINUM_PLATE_V18",
+                                    "name":"E1_04_ALMINUM_PLATE_V18",
+                                    "uniqueId":143,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_ALMINUM_PLATE_V18",
+                                            "name":"E1_04_ALMINUM_PLATE_V18",
+                                            "uniqueId":144,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id":"E1_04_SCREW_P_M3X10_V17",
+                                    "name":"E1_04_SCREW_P_M3X10_V17",
+                                    "uniqueId":146,
+                                    "children":[
+                                        {
+                                            "id":"E1_04_SCREW_P_M3X10_V17",
+                                            "name":"E1_04_SCREW_P_M3X10_V17",
+                                            "uniqueId":147,
+                                            "children":[
+                                                
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}</code></pre>
 <p><a href="https://gist.github.com/renderdraw/6f5cfd6c246d8adb239429204ed09768">link to the source gist</a></p>
-<p><code>&lt;script src="https://gist.github.com/renderdraw/6f5cfd6c246d8adb239429204ed09768.js"&gt;&lt;/script&gt;</code></p>
 <p>Calling the function is simple, find the instance of your AdvancedRenderer on your component, and call the function (<a href="/components/AdvancedRenderer">full API is available here).</a></p>
 <p>in order to retrieve the response, you must register a handler on your component, and then setup the action as a response.&nbsp;</p>
 <p>&nbsp;</p>
