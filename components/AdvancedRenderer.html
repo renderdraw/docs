@@ -2,25 +2,23 @@
 title: Advanced Renderer
 description: The
 published: true
-date: 2020-09-20T19:52:21.824Z
+date: 2020-09-20T19:53:20.251Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
 -->
 
-<h1>Advanced Renderer</h1>
-<h3>&nbsp;</h3>
-<h2>Background Information</h2>
+<h1>Background Information</h1>
 <p>The Advanced Renderer was created for more complex development and interaction scenarios than the SimpleRenderer component. SimpleRenderer was created for displaying 3D drawings and allowing interaction without events or selection of components within the drawing itself. &nbsp; &nbsp;</p>
 <figure class="image"><img src="/advancedrenderer_(context_actionmenu_.png"></figure>
 <p>Advanced Renderer was created to allow for the manipulation of a 3D scene within the context of a Salesforce interaction. By default, the component looks similar to the SimpleRenderer, we're drawing is displayed based off of a record ID from salesforce contact version ID from salesforce or a URL directly to a source 3-D file.&nbsp;</p>
 <p>Advanced renderer is extensible, and provides the ability to provide contextual information within our pane system. As seen in the diagram above, the context content pane (1) is displayed when a the actions that are related to each individual selection with in the 3-D models on the action information pain and then any applicable side work that you might want to split based on actions or interactions</p>
 <p>&nbsp;</p>
-<h2>Usage Notes / When to use</h2>
+<h1>Usage Notes / When to use</h1>
 <p>Advanced Renderer should be used in any custom development scenario. This component was created to allow for the contextual interaction with other data within Salesforce. If you need a custom interaction beyond 3D visualization, this component is likely what you will be using. AdvancedRenderer can be utilized in simple rendering scenarios as well, with the option of utilizing slots.</p>
-<h3>Slots</h3>
+<h2>Slots</h2>
 <p>AdvancedRenderer was designed for extensibility, with that in mind, solving for every use case isn't really possible without knowing how each implementation needs to display 3D. Salesforce lightning components are composable, and the AdvancedRenderer has prebuilt slots for you to pass custom components into.&nbsp;</p>
-<h2>API</h2>
+<h1>API</h1>
 <figure class="table">
   <table>
     <tbody>
@@ -34,7 +32,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>actionInformationPane</h3>
+          <h2>actionInformationPane</h2>
         </td>
         <td>component[]</td>
         <td>global</td>
@@ -44,7 +42,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>allowSelection</h3>
+          <h2>allowSelection</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -54,7 +52,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>brandImageURL</h3>
+          <h2>brandImageURL</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -64,7 +62,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>contentVersionId</h3>
+          <h2>contentVersionId</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -74,7 +72,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>contextContent</h3>
+          <h2>contextContent</h2>
         </td>
         <td>component[]</td>
         <td>global</td>
@@ -84,7 +82,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>contextDetailContent</h3>
+          <h2>contextDetailContent</h2>
         </td>
         <td>component[]</td>
         <td>global</td>
@@ -94,7 +92,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>contextDetailHeaderText</h3>
+          <h2>contextDetailHeaderText</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -104,7 +102,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>displayActionInformationPane</h3>
+          <h2>displayActionInformationPane</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -114,7 +112,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>displayActionInformationPaneOnSelection</h3>
+          <h2>displayActionInformationPaneOnSelection</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -124,7 +122,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>displayContext</h3>
+          <h2>displayContext</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -134,7 +132,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>displayContextDetails</h3>
+          <h2>displayContextDetails</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -144,7 +142,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>displaySidebar</h3>
+          <h2>displaySidebar</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -154,7 +152,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>environmentColor</h3>
+          <h2>environmentColor</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -164,7 +162,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>loadingImage</h3>
+          <h2>loadingImage</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -174,7 +172,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>nodeIgnoreList</h3>
+          <h2>nodeIgnoreList</h2>
         </td>
         <td>string[]</td>
         <td>global</td>
@@ -184,7 +182,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>overrideURL</h3>
+          <h2>overrideURL</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -194,7 +192,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>recordId</h3>
+          <h2>recordId</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -204,7 +202,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>showUserMessages</h3>
+          <h2>showUserMessages</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -214,7 +212,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>sidebarContent</h3>
+          <h2>sidebarContent</h2>
         </td>
         <td>component[]</td>
         <td>global</td>
@@ -224,7 +222,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>size</h3>
+          <h2>size</h2>
         </td>
         <td>string</td>
         <td>global</td>
@@ -234,7 +232,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>spitShine</h3>
+          <h2>spitShine</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -244,7 +242,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>useCommunities</h3>
+          <h2>useCommunities</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
@@ -254,7 +252,7 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
-          <h3>userInteracted</h3>
+          <h2>userInteracted</h2>
         </td>
         <td>boolean</td>
         <td>global</td>
