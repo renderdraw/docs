@@ -2,10 +2,55 @@
 title: EVT_Renderer_Get_Hierarchy
 description: 
 published: true
-date: 2020-09-19T12:30:59.943Z
+date: 2020-09-20T14:46:03.283Z
 tags: events, evt_renderer_get_hierarchy
 editor: ckeditor
 dateCreated: 2020-09-19T12:30:59.943Z
 -->
 
-<h3>EVT_Renderer_Get_Hierarchy</h3>
+<h2>EVT_Renderer_Get_Hierarchy</h2>
+<p>&nbsp;</p>
+<h3>Example</h3>
+<p>Component</p>
+<pre><code class="language-html">&lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"
+   access="public"&gt;
+    &lt;aura:handler name="componentSelected" event="RDraw:EVT_Renderer_Mesh_Selected"
+        action="{!c.handleComponentSelected}" /&gt;
+    &lt;aura:handler name="selectionCleared" event="RDraw:EVT_Renderer_Mesh_Selection_Cleared"
+        action="{!c.handleSelectionCleared}" /&gt;
+    &lt;aura:handler name="getCameraPostionandTarget" event="RDraw:EVT_Renderer_Get_CameraPositionandTarget"
+        action="{!c.handleGetCameraPositionsandTarget}" /&gt;
+    &lt;aura:handler name="hierarchyFetched" event="RDraw:EVT_Renderer_Get_Hierarchy" action="{!c.handleGetHierarchy}" /&gt;
+
+&lt;RDraw:AdvancedRenderer aura:id="renderer" displayContext="true" spitShine="true"
+    allowSelection="true" recordId="{!v.recordId}" size="Medium"&gt;
+   &lt;aura:set attribute="contextContent"&gt;
+       &lt;lightning:card title="Get Hierarchy"&gt;
+          &lt;p class="slds-p-horizontal_small"&gt;
+              &lt;!-- button for image replacement --&gt;
+              &lt;lightning:button title="Get Hierarchy"
+                  onclick="{!c.handleTestGetHierarchy}"&gt;Get Hierarchy
+              &lt;/lightning:button&gt;
+          &lt;/p&gt;
+      &lt;/lightning:card&gt;
+   &lt;/aura:set&gt;
+&lt;/aura:component&gt;</code></pre>
+<p>Controller</p>
+<pre><code class="language-javascript">({
+    handleTestGetHierarchy: function (component, event, helper) {
+        let renderer = component.find('renderer');
+        renderer.getHierarchy();
+    },
+    handleGetHierarchy: function (component, event, helper) {
+        alert(JSON.stringify(event.getParam('data'), null, 2))
+    },
+    
+    handleGetCameraPositionsandTarget: function (component, event, helper) {
+        alert(JSON.stringify(event.getParam('data'), null, 2))
+    },
+     handleComponentSelected: function (component, event, helper) {
+        alert('Selected name = ' + event.getParams().name);
+        //todo do something with the selected component data like fetch salesforce data 
+    },
+    
+})</code></pre>
