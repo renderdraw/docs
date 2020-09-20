@@ -1,10 +1,11 @@
 <!--
 title: Advanced Renderer
-description: The 
+description: The
 published: true
-date: 2020-09-14T18:00:42.202Z
+date: 2020-09-20T19:52:21.824Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
+dateCreated: 2020-09-18T21:21:42.005Z
 -->
 
 <h1>Advanced Renderer</h1>
@@ -32,7 +33,9 @@ editor: ckeditor
         <td><strong>DESCRIPTION</strong></td>
       </tr>
       <tr>
-        <td>actionInformationPane</td>
+        <td>
+          <h3>actionInformationPane</h3>
+        </td>
         <td>component[]</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -40,7 +43,9 @@ editor: ckeditor
         <td>The horizontal slot available above the 3D model. This is typically used for Actions related to what is being rendered (e.g. Create a Case)</td>
       </tr>
       <tr>
-        <td>allowSelection</td>
+        <td>
+          <h3>allowSelection</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -48,7 +53,9 @@ editor: ckeditor
         <td>Allow the selection of subcomponents either by ComponentTouch(Click) or programmatically using the selectComponent method</td>
       </tr>
       <tr>
-        <td>brandImageURL</td>
+        <td>
+          <h3>brandImageURL</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -56,7 +63,9 @@ editor: ckeditor
         <td>The branded logo image displayed in the bottom right corner of the rendering components. Pass an empty string if no branding is desired.</td>
       </tr>
       <tr>
-        <td>contentVersionId</td>
+        <td>
+          <h3>contentVersionId</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -64,7 +73,9 @@ editor: ckeditor
         <td>The content version to render (if rendering from Salesforce servers/files). Using contentversionid will bypass the standard recordId and the overrideURL</td>
       </tr>
       <tr>
-        <td>contextContent</td>
+        <td>
+          <h3>contextContent</h3>
+        </td>
         <td>component[]</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -72,7 +83,9 @@ editor: ckeditor
         <td>The Salesforce Lightning components to be displayed on the context pane (left side slot, representing context to what is being rendered.)</td>
       </tr>
       <tr>
-        <td>contextDetailContent</td>
+        <td>
+          <h3>contextDetailContent</h3>
+        </td>
         <td>component[]</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -80,7 +93,9 @@ editor: ckeditor
         <td>The Salesforce Lightning components to be displayed on the context detail pane (left side slot, representing details to the context of what is being rendered.) This is typically displayed based on some action that happened within the contextContent compontrets, e.g. list order items, then dive into the details of a particular line.</td>
       </tr>
       <tr>
-        <td>contextDetailHeaderText</td>
+        <td>
+          <h3>contextDetailHeaderText</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -88,7 +103,9 @@ editor: ckeditor
         <td>The header text that is displayed next to the back button on the contextDetail facet. This describes the content that is passed via contextDetailsContent, typically the name of a line item or detail item within a list presented in the contextContent</td>
       </tr>
       <tr>
-        <td>displayActionInformationPane</td>
+        <td>
+          <h3>displayActionInformationPane</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -96,7 +113,9 @@ editor: ckeditor
         <td>Whether or not to display the Action information pane slot (top slot) and components passed into actionInformationPane parameter</td>
       </tr>
       <tr>
-        <td>displayActionInformationPaneOnSelection</td>
+        <td>
+          <h3>displayActionInformationPaneOnSelection</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -104,7 +123,9 @@ editor: ckeditor
         <td>Whether or not to display the Action information pane slot (top slot) when a selection is made via ComponentTouch or programmatically</td>
       </tr>
       <tr>
-        <td>displayContext</td>
+        <td>
+          <h3>displayContext</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -112,7 +133,9 @@ editor: ckeditor
         <td>Whether or not to display the context slot (left side slot) and components passed into contextContent parameter</td>
       </tr>
       <tr>
-        <td>displayContextDetails</td>
+        <td>
+          <h3>displayContextDetails</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -120,7 +143,9 @@ editor: ckeditor
         <td>Whether or not to display the context slot details and components passed into contextDetailContent parameter. Use this for displaying detail components related to contextContent, e.g. Line item details for for an order item listed in contextContent. This cannot be used at the same time as displayContext</td>
       </tr>
       <tr>
-        <td>displaySidebar</td>
+        <td>
+          <h3>displaySidebar</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -128,7 +153,9 @@ editor: ckeditor
         <td>Whether or not to display the sidebar slot (right side slot) and components passed into sidebarContent parameter</td>
       </tr>
       <tr>
-        <td>environmentColor</td>
+        <td>
+          <h3>environmentColor</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -136,7 +163,9 @@ editor: ckeditor
         <td>The background color of the 3D environment. Use Hex code format, such as #ffffff</td>
       </tr>
       <tr>
-        <td>loadingImage</td>
+        <td>
+          <h3>loadingImage</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -144,7 +173,9 @@ editor: ckeditor
         <td>The image URL to display while the 3D model is loading</td>
       </tr>
       <tr>
-        <td>nodeIgnoreList</td>
+        <td>
+          <h3>nodeIgnoreList</h3>
+        </td>
         <td>string[]</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -152,7 +183,9 @@ editor: ckeditor
         <td>A list of strings that contain names of nodes to ignore when traversing the 3D structure during ComponentTouch or Finding a component by name</td>
       </tr>
       <tr>
-        <td>overrideURL</td>
+        <td>
+          <h3>overrideURL</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -160,7 +193,9 @@ editor: ckeditor
         <td>The absolute URL to render.</td>
       </tr>
       <tr>
-        <td>recordId</td>
+        <td>
+          <h3>recordId</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -168,7 +203,9 @@ editor: ckeditor
         <td>Id of the Salesforce Record in which you fetch the associated rendering (Using relationships)</td>
       </tr>
       <tr>
-        <td>showUserMessages</td>
+        <td>
+          <h3>showUserMessages</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -176,7 +213,9 @@ editor: ckeditor
         <td>Show rendering related messages to the user. This is typically used in debug scenarios</td>
       </tr>
       <tr>
-        <td>sidebarContent</td>
+        <td>
+          <h3>sidebarContent</h3>
+        </td>
         <td>component[]</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -184,7 +223,9 @@ editor: ckeditor
         <td>The vertical slot available to the right of the 3D model. This is typically used for Detailed information related to the result of a ComponentTouch on a model (e.g. selection of a subcomponent within a model for checking on warranty information).</td>
       </tr>
       <tr>
-        <td>size</td>
+        <td>
+          <h3>size</h3>
+        </td>
         <td>string</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -192,7 +233,9 @@ editor: ckeditor
         <td>Size of the component, either Stretch, Small, Medium, Large, Jumbo</td>
       </tr>
       <tr>
-        <td>spitShine</td>
+        <td>
+          <h3>spitShine</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -200,7 +243,9 @@ editor: ckeditor
         <td>Add a shine to your model, even if the materials loaded have no reflection</td>
       </tr>
       <tr>
-        <td>useCommunities</td>
+        <td>
+          <h3>useCommunities</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -208,7 +253,9 @@ editor: ckeditor
         <td>Fixes the fetching of files and metadata when utilizing a Community</td>
       </tr>
       <tr>
-        <td>userInteracted</td>
+        <td>
+          <h3>userInteracted</h3>
+        </td>
         <td>boolean</td>
         <td>global</td>
         <td>&nbsp;</td>
@@ -267,7 +314,9 @@ editor: ckeditor
     </thead>
     <tbody>
       <tr>
-        <td>addModelToScene</td>
+        <td>
+          <h3>addModelToScene</h3>
+        </td>
         <td>
           <p><strong>nodeName</strong></p>
           <p>string</p>
@@ -312,7 +361,9 @@ editor: ckeditor
         <td>Add an additional model to the scene.</td>
       </tr>
       <tr>
-        <td>addWidget</td>
+        <td>
+          <h3>addWidget</h3>
+        </td>
         <td>
           <p><strong>name</strong></p>
           <p>string</p>
@@ -346,7 +397,9 @@ editor: ckeditor
         <td>Still in our 'labs' status. Adds a widget to our scene. More to come</td>
       </tr>
       <tr>
-        <td>aimCamera</td>
+        <td>
+          <h3>aimCamera</h3>
+        </td>
         <td>
           <p><strong>x</strong></p>
           <p>double</p>
@@ -364,7 +417,9 @@ editor: ckeditor
         <td>Aim the camera in 3D space either at a component or some coordinates.</td>
       </tr>
       <tr>
-        <td>displayMedia</td>
+        <td>
+          <h3>displayMedia</h3>
+        </td>
         <td>
           <p><strong>imageURL</strong></p>
           <p>string</p>
@@ -376,27 +431,37 @@ editor: ckeditor
         <td>Display related media instead of the 3D drawing</td>
       </tr>
       <tr>
-        <td>getCameraPositionandTarget</td>
+        <td>
+          <h3>getCameraPositionandTarget</h3>
+        </td>
         <td>&nbsp;</td>
         <td>Fetch the camera's current position and where it is aiming.</td>
       </tr>
       <tr>
-        <td>getHierarchy</td>
+        <td>
+          <h3>getHierarchy</h3>
+        </td>
         <td>&nbsp;</td>
         <td>Fetch the 3D model's hierarchy. Must subscribe to RDraw:EVT_Renderer_Get_Hierarchy for response</td>
       </tr>
       <tr>
-        <td>hideMedia</td>
+        <td>
+          <h3>hideMedia</h3>
+        </td>
         <td>&nbsp;</td>
         <td>Hide displayed related media that is presented in the content area of this component</td>
       </tr>
       <tr>
-        <td>loadAndApplyTextureToModel</td>
+        <td>
+          <h3>loadAndApplyTextureToModel</h3>
+        </td>
         <td>&nbsp;</td>
         <td>Load a texture and add it to a model.</td>
       </tr>
       <tr>
-        <td>positionCamera</td>
+        <td>
+          <h3>positionCamera</h3>
+        </td>
         <td>
           <p><strong>x</strong></p>
           <p>double</p>
@@ -417,7 +482,9 @@ editor: ckeditor
         <td>Position the camera in 3D space.</td>
       </tr>
       <tr>
-        <td>removeComponent</td>
+        <td>
+          <h3>removeComponent</h3>
+        </td>
         <td>
           <p><strong>uniqueId</strong></p>
           <p>string</p>
@@ -426,12 +493,16 @@ editor: ckeditor
         <td>Removes the given component from a scene</td>
       </tr>
       <tr>
-        <td>resetCamera</td>
+        <td>
+          <h3>resetCamera</h3>
+        </td>
         <td>&nbsp;</td>
         <td>Reset the camera to it's initial position in the scene</td>
       </tr>
       <tr>
-        <td>selectComponent</td>
+        <td>
+          <h3>selectComponent</h3>
+        </td>
         <td>
           <p><strong>name</strong></p>
           <p>string</p>
@@ -451,7 +522,9 @@ editor: ckeditor
         <td>Programmatically select a component node within the 3D model. Raises RDraw:EVT_Renderer_Mesh_Selected on successful selection</td>
       </tr>
       <tr>
-        <td>toggleEnableComponent</td>
+        <td>
+          <h3>toggleEnableComponent</h3>
+        </td>
         <td>
           <p><strong>name</strong></p>
           <p>string</p>
@@ -469,7 +542,9 @@ editor: ckeditor
         <td>Enable or disable a given 3D node by passing a uniqueId, name or id</td>
       </tr>
       <tr>
-        <td>updateComponentColor</td>
+        <td>
+          <h3>updateComponentColor</h3>
+        </td>
         <td>
           <p><strong>name</strong></p>
           <p>string</p>
