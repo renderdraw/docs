@@ -2,15 +2,37 @@
 title: EVT_Renderer_Get_Hierarchy
 description: 
 published: true
-date: 2020-09-20T14:46:03.283Z
+date: 2020-09-20T15:01:14.087Z
 tags: events, evt_renderer_get_hierarchy
 editor: ckeditor
 dateCreated: 2020-09-19T12:30:59.943Z
 -->
 
-<h2>EVT_Renderer_Get_Hierarchy</h2>
-<p>&nbsp;</p>
-<h3>Example</h3>
+<h2>RDraw:EVT_Renderer_Get_Hierarchy</h2>
+<h3>Usage Notes</h3>
+<p>This event is raised when the <strong>getHierarchy</strong> &nbsp;method is called on the AdvancedRenderer component. A parameter is passed back (data) that represents the 3D structure of the Scene being rendered.&nbsp;</p>
+<h3>Parameters</h3>
+<figure class="table" style="width:1369px;">
+  <table style="background-color:rgb(33, 33, 33);border-bottom:1px solid rgb(221, 219, 218);border-top:1px solid rgb(221, 219, 218);">
+    <thead>
+      <tr>
+        <th style="background-color:rgb(66, 66, 66);border-bottom:none;border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(97, 97, 97);padding:0.25rem 0.5rem;"><strong>NAME</strong></th>
+        <th style="background-color:rgb(66, 66, 66);border-bottom:none;border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(97, 97, 97);padding:0.25rem 0.5rem;"><strong>TYPE</strong></th>
+        <th style="background-color:rgb(66, 66, 66);border-bottom:none;border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(97, 97, 97);padding:0.25rem 0.5rem;"><strong>REQUIRED</strong></th>
+        <th style="background-color:rgb(66, 66, 66);border-bottom:none;border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(97, 97, 97);padding:0.25rem 0.5rem;"><strong>DESCRIPTION</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th style="background-color:rgb(46, 46, 46);border-bottom:1px solid rgb(97, 97, 97);border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">data</th>
+        <td style="border-bottom:1px solid rgb(97, 97, 97);border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">object</td>
+        <td style="border-bottom:1px solid rgb(97, 97, 97);border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">&nbsp;</td>
+        <td style="border-bottom:1px solid rgb(97, 97, 97);border-left:1px solid rgb(97, 97, 97);border-right:1px solid rgb(97, 97, 97);border-top:1px solid rgb(221, 219, 218);padding:0.25rem 0.5rem;">The JSON hierarchical representation of the 3D scene&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h3>Example Usage</h3>
 <p>Component</p>
 <pre><code class="language-html">&lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"
    access="public"&gt;
