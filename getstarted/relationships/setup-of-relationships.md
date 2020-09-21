@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-21T19:00:18.444Z
+date: 2020-09-21T19:06:24.351Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -10,13 +10,12 @@ dateCreated: 2020-09-21T19:00:18.444Z
 
 # Why Relationships 
 
-If you are hosting your drawings & files on a remote server, check out their URLs. For us it looks something like this for a single 3D scene
+If you are hosting your drawings & files on a remote server, check out their URLs. For us it looks something like this for a single 3D product visualization scene
 
 ````
 https://files.renderdraw.us/renderings/public/gltf/clubcar/dtest3/XRT_850draco-processed.gltf
 https://files.renderdraw.us/renderings/public/gltf/clubcar/dtest3/blob%3Ahttps%3A__sandbox%20image.png
 https://files.renderdraw.us/renderings/public/gltf/clubcar/dtest3/blob%3Ahttps%3A__sandbox%20image_1.png
-https://files.renderdraw.us/public/images/2020RDLogo.png
 ````
 
 Notice anything?
@@ -56,9 +55,7 @@ wbsDiagram {
 ******* XRT_850draco-processed.gltf
 ******* blob%3Ahttps%3A__sandbox%20image.png
 ******* blob%3Ahttps%3A__sandbox%20image_1.png
-** public
-*** images
-**** 2020RDLogo.png
+
 @endwbs
 ```
 We are using remote resources like a file system in order to load 3D files for use with Salesforce. This is particularly useful when loading related assets such as textures and materials that are associated but not included in the converted 3D Drawing. 
@@ -127,9 +124,6 @@ wbsDiagram {
 ****** PVP7S%20R1%2004_assy.glb
 ***** medtronics
 ****** PB560_Ventilator_(4096600).gltf
-** public
-*** images
-**** 2020RDLogo.png
 @endwbs
 ```
 
