@@ -2,14 +2,27 @@
 title: Custom 3D App
 description: 
 published: true
-date: 2020-08-20T12:53:17.791Z
+date: 2020-09-21T13:09:14.334Z
 tags: examples
 editor: ckeditor
+dateCreated: 2020-09-18T21:21:50.757Z
 -->
 
 <h1>Custom 3D App Development using Salesforce</h1>
-<h3>Interacting with our components</h3>
-<p>Currently, we support Aura interactions, and our components can be wrapped and utilized directly due to their (ever growing) APIs through both attributes, events as well as method. We follow a unidirectional data flow pattern by enabling our rendering components to respond to events, functions and attribute changes, then raising events to respond if data is to be returned. To respond, simply register a handler for that given event type. &nbsp; &nbsp;</p>
+<h2>Creating a custom Component using AdvancedRenderer and Composition</h2>
+<p>Creating a custom component that wraps a 3D experience is simple. <a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_create_cli.htm">Create a new Aura Component</a> and add the RDraw:AdvancedRenderer component to your component. Take a look at the Slots section of the <a href="/components/AdvancedRenderer">AdvancedRenderer page.</a></p>
+<p>&nbsp;</p>
+<pre><code class="language-html">&lt;aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,force:hasRecordId"
+    controller="TestCustomRenderDrawDevHelperController" access="public"&gt;
+	&lt;RDraw:AdvancedRenderer aura:id="renderer" displayContext="true"
+                                loadingImage="{!v.loadingImage}" displaySidebar="{!v.showSidebar}" spitShine="True"
+                                allowSelection="true" recordId="{!v.recordId}" size="Medium"&gt;
+     	
+     &lt;/RDraw:AdvancedRenderer&gt;
+&lt;/aura:component&gt;</code></pre>
+<h2><br>Interacting with our components</h2>
+<p>Currently, we support a wide variety Aura interactions, and our components can be wrapped and utilized directly due to their (ever growing) APIs through both attributes, events and methods. We follow a unidirectional data flow pattern by enabling our rendering components to respond to events, functions and attribute changes, then raising events to respond if data is to be returned. To respond, simply register a handler for that given event type. &nbsp; More information about this can be found in <a href="/examples/custom-3D-app">Scene Data Interaction.</a></p>
+<p>&nbsp;</p>
 <h2>Branding</h2>
 <h3>Branding with Static Resources</h3>
 <p>Our image attributes (loadingImage, the imageURL parameter in the displayMedia method and the brandImageURL) all utilize the direct path to the image in order to render to your screen. If your org has access to the URL you supply for these parameters, your images will display properly.&nbsp;</p>
