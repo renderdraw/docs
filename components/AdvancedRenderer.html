@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: The
 published: true
-date: 2020-09-21T10:03:45.556Z
+date: 2020-09-21T12:09:52.344Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -10,28 +10,60 @@ dateCreated: 2020-09-18T21:21:42.005Z
 
 <h1>Background Information</h1>
 <p>The Advanced Renderer was created for more complex development and interaction scenarios than the SimpleRenderer component. SimpleRenderer was created for displaying 3D drawings and allowing interaction without events or selection of components within the drawing itself. &nbsp; &nbsp;</p>
-<p>&nbsp;</p>
-<p>Advanced Renderer was created to allow for the manipulation of a 3D scene within the context of a Salesforce interaction. By default, the component looks similar to the SimpleRenderer, we're drawing is displayed based off of a record ID from salesforce contact version ID from salesforce or a URL directly to a source 3-D file.&nbsp;</p>
-<p>Advanced renderer is extensible, and provides the ability to provide contextual information within our pane system. As seen in the diagram above, the context content pane (1) is displayed when a the actions that are related to each individual selection with in the 3-D models on the action information pain and then any applicable side work that you might want to split based on actions or interactions</p>
-<p>&nbsp;</p>
-<h1>Usage Notes / When to use</h1>
+<p>Advanced Renderer was created to allow for the manipulation of a 3D scene within the context of a Salesforce interaction. This can be displayed using our Slot UI framework which is detailed below.</p>
+<h1>Usage Notes&nbsp;</h1>
 <p>Advanced Renderer should be used in any custom development scenario. This component was created to allow for the contextual interaction with other data within Salesforce. If you need a custom interaction beyond 3D visualization, this component is likely what you will be using. AdvancedRenderer can be utilized in simple rendering scenarios as well, with the option of utilizing slots.</p>
 <h2>Slots</h2>
 <p>AdvancedRenderer was designed for extensibility, with that in mind, solving for every use case isn't really possible without knowing how each implementation and custom project needs to display 3D within Salesforce. Salesforce Lightning components are composable, and the AdvancedRenderer has prebuilt slots for you to pass custom components into.&nbsp;</p>
+<p>```plantuml</p>
+<p>@startuml</p>
+<p>skinparam backgroundColor White</p>
+<p>skinparam state {</p>
+<p>&nbsp;</p>
+<p>&nbsp;BackgroundColor LightBlue</p>
+<p>&nbsp;BackgroundColor&lt;&lt;Warning&gt;&gt; LightYellow</p>
+<p>&nbsp;BorderColor Gray</p>
+<p>&nbsp;FontName Impact</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>hide empty description</p>
+<p>State Display_Records as "Display Records"</p>
+<p>State Select_Record as "User Selects Record"</p>
+<p>State User_Selects_Component as "User Selects part of a 3D drawing"</p>
+<p>State Display_related_Actions as "Display any related actions"</p>
+<p>State User_Selects_Action as "User selects a custom action \nfor more information"</p>
+<p>State Display_Additional_Information as "Display custom information \nabout selected subcomponent"</p>
+<p>&nbsp;</p>
+<p>[*] --&gt; Display_Records : Fetch a list of records,\ne.g. Order Items</p>
+<p>Display_Records : These can be any record type</p>
+<p>Display_Records : A default 3D model can be displayed or static image</p>
+<p>Display_Additional_Information: e.g. Warranty or other record information</p>
+<p>Display_Records -right-&gt; Select_Record</p>
+<p>Select_Record -right-&gt; User_Selects_Component : Update 3D scene \n&amp; interaction</p>
+<p>User_Selects_Component -right-&gt; User_Selects_Action : Display any related actions</p>
+<p>User_Selects_Action -right-&gt; Display_Additional_Information</p>
+<p>Display_Additional_Information -up-&gt;[*] : User finishing activity \ne.g. order replacement part</p>
+<p>@enduml</p>
+<p>```</p>
 <figure class="image"><img src="/advancedrenderer_(context_actionmenu_.png"></figure>
-<p>These slots were meant to be used as needed, and data surrounding what we are rendering is supposed to flow from left to right, starting with ContextContent (1).&nbsp;</p>
+<p>These slots were meant to be used as needed, and data surrounding what we are rendering is supposed to flow from left to right, starting with ContextContent (1) and concluding on the Sidebar Content (4) with some interaction in between.&nbsp;</p>
 <h3>Context Content (1)</h3>
-<p>The ContextContent slot is meant to provide high-level information to the user regarding what the 3D model is supposed to represent. Examples of what we have used here have been&nbsp;</p>
+<p>The ContextContent slot is meant to provide high-level information to the user regarding what the 3D model is supposed to represent. Some examples of what has been used in the ContextContent Slot in past projects include&nbsp;</p>
 <ul>
   <li>Lists of Salesforce Objects that, once selected, update what rendering is displayed</li>
   <li>Configuration options for a product to modify the 3D object/scene &nbsp;</li>
 </ul>
 <p>Because of the recurring theme of searching for details that reside in a list of information, we have created the <strong>ContextContentDetails</strong> slot as well, which is displayed in the same area (1) that the ContextContent component is displayed, the only difference is an additional back button (that raises <a href="/events/EVT_Renderer_Context_Details_Closed">EVT_Renderer_Context_Details_Closed)</a>, and displayed header text to provide your user some context &nbsp;(attribute <strong>contextDetailHeaderText).</strong></p>
-<p>&nbsp;</p>
+<h3><strong>Action Information Pane (3)</strong></h3>
+<p>The horizontal slot available above the 3D model, which is typically used for Actions related to what is being rendered (e.g. Create a Case). Using attribute <strong>displayActionInformationPaneOnSelection</strong> will automatically display the ActionInformationPane when a user selects a component using <strong>ComponentTouch.</strong>&nbsp;</p>
+<p>We suggest limiting the height of components passed into this slot to approximately ⅓ of the parents components overall height, as the ActionInformationPane shares vertical space with the rendered content, and the 3D element is typically the star of the show in a user's eyes.</p>
+<h3>Sidebar Content (4)</h3>
+<p>The Sidebar content slot provides space for additional information that is to be displayed based on an interaction in the 3D content pane.&nbsp;</p>
+<p>Visibility of &nbsp;</p>
 <h3>Passing components into a slot</h3>
 <p>Passing components into slots are as simple as using the aura:set tag with the name of the slot you would like to use.&nbsp;</p>
-<pre><code class="language-html">&lt;RDraw:AdvancedRenderer aura:id="renderer" displayContext="true" 
- loadingImage="{!v.loadingImage}" displaySidebar="{!v.showSidebar}" 
+<pre><code class="language-html">&lt;RDraw:AdvancedRenderer aura:id="renderer" displayContext="true"  loadingImage="{!v.loadingImage}"
+ displaySidebar="{!v.showSidebar}" displayActionInformationPane="{!v.displayActions}"
  spitShine="True" allowSelection="true" recordId="{!v.recordId}"&gt;
     &lt;aura:set attribute="contextContent"&gt;
            //your component goes here for the context menu (1) 
@@ -564,5 +596,3 @@ dateCreated: 2020-09-18T21:21:42.005Z
     </tbody>
   </table>
 </figure>
-<h3>Example</h3>
-<p>&nbsp;</p>
