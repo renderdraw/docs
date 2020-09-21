@@ -2,12 +2,26 @@
 title: Setup of Relationships
 description: 
 published: true
-date: 2020-09-18T10:27:33.588Z
+date: 2020-09-21T18:26:06.018Z
 tags: 
 editor: ckeditor
+dateCreated: 2020-09-18T21:22:07.414Z
 -->
 
-<h1>Setup of Relationships</h1>
+<p>The purpose of this article is to assist in the creation and understanding of relationships for our 3D files. By the end, you should have created a conventional relationship.<br>&nbsp;</p>
+<h1>Why Relationships&nbsp;</h1>
+<p>If you are hosting your drawings &amp; files on a remote server, check out their URLs. For us it looks something like this for a single 3D scene"</p>
+<pre><code class="language-plaintext">https://files.renderdraw.us/renderings/public/gltf/clubcar/dtest3/XRT_850draco-processed.gltf
+https://files.renderdraw.us/renderings/public/gltf/clubcar/dtest3/blob%3Ahttps%3A__sandbox%20image.png
+https://files.renderdraw.us/renderings/public/gltf/clubcar/dtest3/blob%3Ahttps%3A__sandbox%20image_1.png
+https://files.renderdraw.us/public/images/2020RDLogo.png</code></pre>
+<p>Notice anything?</p>
+<p>We are using remote resources like a file system in order to load 3D files for use with Salesforce. This is particularly useful when loading related assets such as textures and materials that are associated but not included in the converted 3D Drawing. In the files above, we are utilizing the same file server hosted at <a href="files.renderdraw.us">https://files.renderdraw.us/</a>. From there we separate into “renderings” and “public” &nbsp;sub directories, and on and on until we reach our actual file to render, in this case <code>XRT_850draco-processed.gltf.</code><br>All of these files relate to a single drawing, and when we attempt to scale storing these for every product your organization will ever have, it starts becoming daunting. At the end of the day, whenever we interact with data within Salesforce, there might be an associated 3D drawing that should be displayed. Attempting to&nbsp;</p>
+<p>With RenderDraw's relationship management, these 3D drawings can be shared between different objects usages several objects within Salesforce.</p>
+<p>&nbsp;</p>
+<h1>Create a Relationship</h1>
+<h2>Create a RenderDraw Setting</h2>
+<h2>Create a Re</h2>
 <figure class="media">
   <oembed url="https://www.youtube.com/watch?v=vM-yV6BzA5c"></oembed>
 </figure>
