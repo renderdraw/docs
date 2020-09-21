@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: The
 published: true
-date: 2020-09-21T12:09:52.344Z
+date: 2020-09-21T12:11:58.031Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -15,43 +15,44 @@ dateCreated: 2020-09-18T21:21:42.005Z
 <p>Advanced Renderer should be used in any custom development scenario. This component was created to allow for the contextual interaction with other data within Salesforce. If you need a custom interaction beyond 3D visualization, this component is likely what you will be using. AdvancedRenderer can be utilized in simple rendering scenarios as well, with the option of utilizing slots.</p>
 <h2>Slots</h2>
 <p>AdvancedRenderer was designed for extensibility, with that in mind, solving for every use case isn't really possible without knowing how each implementation and custom project needs to display 3D within Salesforce. Salesforce Lightning components are composable, and the AdvancedRenderer has prebuilt slots for you to pass custom components into.&nbsp;</p>
-<p>```plantuml</p>
-<p>@startuml</p>
-<p>skinparam backgroundColor White</p>
-<p>skinparam state {</p>
 <p>&nbsp;</p>
-<p>&nbsp;BackgroundColor LightBlue</p>
-<p>&nbsp;BackgroundColor&lt;&lt;Warning&gt;&gt; LightYellow</p>
-<p>&nbsp;BorderColor Gray</p>
-<p>&nbsp;FontName Impact</p>
-<p>}</p>
+<p><code>```plantuml</code></p>
+<p><code>@startuml</code></p>
+<p><code>skinparam backgroundColor White</code></p>
+<p><code>skinparam state {</code></p>
 <p>&nbsp;</p>
-<p>hide empty description</p>
-<p>State Display_Records as "Display Records"</p>
-<p>State Select_Record as "User Selects Record"</p>
-<p>State User_Selects_Component as "User Selects part of a 3D drawing"</p>
-<p>State Display_related_Actions as "Display any related actions"</p>
-<p>State User_Selects_Action as "User selects a custom action \nfor more information"</p>
-<p>State Display_Additional_Information as "Display custom information \nabout selected subcomponent"</p>
+<p><code>&nbsp;BackgroundColor LightBlue</code></p>
+<p><code>&nbsp;BackgroundColor&lt;&lt;Warning&gt;&gt; LightYellow</code></p>
+<p><code>&nbsp;BorderColor Gray</code></p>
+<p><code>&nbsp;FontName Impact</code></p>
+<p><code>}</code></p>
 <p>&nbsp;</p>
-<p>[*] --&gt; Display_Records : Fetch a list of records,\ne.g. Order Items</p>
-<p>Display_Records : These can be any record type</p>
-<p>Display_Records : A default 3D model can be displayed or static image</p>
-<p>Display_Additional_Information: e.g. Warranty or other record information</p>
-<p>Display_Records -right-&gt; Select_Record</p>
-<p>Select_Record -right-&gt; User_Selects_Component : Update 3D scene \n&amp; interaction</p>
-<p>User_Selects_Component -right-&gt; User_Selects_Action : Display any related actions</p>
-<p>User_Selects_Action -right-&gt; Display_Additional_Information</p>
-<p>Display_Additional_Information -up-&gt;[*] : User finishing activity \ne.g. order replacement part</p>
-<p>@enduml</p>
-<p>```</p>
+<p><code>hide empty description</code></p>
+<p><code>State Display_Records as "Display Records"</code></p>
+<p><code>State Select_Record as "User Selects Record"</code></p>
+<p><code>State User_Selects_Component as "User Selects part of a 3D drawing"</code></p>
+<p><code>State Display_related_Actions as "Display any related actions"</code></p>
+<p><code>State User_Selects_Action as "User selects a custom action \nfor more information"</code></p>
+<p><code>State Display_Additional_Information as "Display custom information \nabout selected subcomponent"</code></p>
+<p>&nbsp;</p>
+<p><code>[*] --&gt; Display_Records : Fetch a list of records,\ne.g. Order Items</code></p>
+<p><code>Display_Records : These can be any record type</code></p>
+<p><code>Display_Records : A default 3D model can be displayed or static image</code></p>
+<p><code>Display_Additional_Information: e.g. Warranty or other record information</code></p>
+<p><code>Display_Records -right-&gt; Select_Record</code></p>
+<p><code>Select_Record -right-&gt; User_Selects_Component : Update 3D scene \n&amp; interaction</code></p>
+<p><code>User_Selects_Component -right-&gt; User_Selects_Action : Display any related actions</code></p>
+<p><code>User_Selects_Action -right-&gt; Display_Additional_Information</code></p>
+<p><code>Display_Additional_Information -up-&gt;[*] : User finishing activity \ne.g. order replacement part</code></p>
+<p><code>@enduml</code></p>
+<p><code>```</code></p>
 <figure class="image"><img src="/advancedrenderer_(context_actionmenu_.png"></figure>
 <p>These slots were meant to be used as needed, and data surrounding what we are rendering is supposed to flow from left to right, starting with ContextContent (1) and concluding on the Sidebar Content (4) with some interaction in between.&nbsp;</p>
 <h3>Context Content (1)</h3>
 <p>The ContextContent slot is meant to provide high-level information to the user regarding what the 3D model is supposed to represent. Some examples of what has been used in the ContextContent Slot in past projects include&nbsp;</p>
 <ul>
   <li>Lists of Salesforce Objects that, once selected, update what rendering is displayed</li>
-  <li>Configuration options for a product to modify the 3D object/scene &nbsp;</li>
+  <li>Configuration options for a product to modify the 3D object/scene</li>
 </ul>
 <p>Because of the recurring theme of searching for details that reside in a list of information, we have created the <strong>ContextContentDetails</strong> slot as well, which is displayed in the same area (1) that the ContextContent component is displayed, the only difference is an additional back button (that raises <a href="/events/EVT_Renderer_Context_Details_Closed">EVT_Renderer_Context_Details_Closed)</a>, and displayed header text to provide your user some context &nbsp;(attribute <strong>contextDetailHeaderText).</strong></p>
 <h3><strong>Action Information Pane (3)</strong></h3>
