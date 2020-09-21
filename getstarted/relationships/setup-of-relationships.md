@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-21T22:46:20.973Z
+date: 2020-09-21T22:57:12.877Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -136,7 +136,11 @@ With RenderDraw's relationship management, these 3D drawings can be shared betwe
 The underlying drawing doesn't change, only the usecase and object on Salesforce did.
 
 Lets jump in and learn how to create relationships between a Salesforce object and a 3D drawing source. 
+# What is a RenderDraw Relationship? 
+In order to scale the quantities of objects we could reasonably display 3D models for, we have created a grouping of relationship objects that map to a given object in Salesforce that is User determined.
 
+From there, applicable fields are selected that contain  
+![renderdraw_settings_default_crm_relationships_=1.7.png](/renderdraw_settings_default_crm_relationships_=1.7.png)
 # Create a Relationship
 Think of a RenderDraw relationship like a formula. This formula determines, by object, how we are going to fetch your 3D files and related resources for a given Salesforce Object record. At the end of the day, we are looking for a file in a remote destination, from the example above, 
 
