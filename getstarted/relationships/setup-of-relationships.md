@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-21T19:21:13.162Z
+date: 2020-09-21T20:30:43.168Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -130,18 +130,24 @@ wbsDiagram {
 Notice how the size of the tree balooned? Many times references to 3D files are many to one, so it can be said for every record added to Salesforce of a given type that requires 3D visualization, at least one relationship will have to be maintained. Writing this relationship 
 With RenderDraw's relationship management, these 3D drawings can be shared between different objects usages several objects within Salesforce.
 
+![filepathbreakdown.png](/filepathbreakdown.png)
+
 # Relationship Strategies
 ## What are you visualizing?
 If you are planning to render a single product or scene for your entire org, you likely do not need a relationship strategy or a relationship at all. Relationships are for scaling 3D over the size of a particular object type. Most frequently, you will likely be visualizing products in either sales or service scenarios.  
 
 ## Where are you going to want to render?
 ### The power of Salesforce lookups 
+![renderdraw_relationship_management_overview.png](/renderdraw_relationship_management_overview.png)
+
 # Create a Relationship
 
+![renderdraw_settings_default_crm_relationships.png](/renderdraw_settings_default_crm_relationships.png)
 ## Create a RenderDraw Setting
 
-
+![basesettingdetails.png](/basesettingdetails.png)
 ## Create a Relationship Setting
+![relationshipsettingnewrecord.png](/relationshipsettingnewrecord.png)
 
 ## Render from your Relationship
 
