@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: The
 published: true
-date: 2020-09-21T12:11:58.031Z
+date: 2020-09-21T12:12:25.066Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -16,36 +16,36 @@ dateCreated: 2020-09-18T21:21:42.005Z
 <h2>Slots</h2>
 <p>AdvancedRenderer was designed for extensibility, with that in mind, solving for every use case isn't really possible without knowing how each implementation and custom project needs to display 3D within Salesforce. Salesforce Lightning components are composable, and the AdvancedRenderer has prebuilt slots for you to pass custom components into.&nbsp;</p>
 <p>&nbsp;</p>
-<p><code>```plantuml</code></p>
-<p><code>@startuml</code></p>
-<p><code>skinparam backgroundColor White</code></p>
-<p><code>skinparam state {</code></p>
-<p>&nbsp;</p>
-<p><code>&nbsp;BackgroundColor LightBlue</code></p>
-<p><code>&nbsp;BackgroundColor&lt;&lt;Warning&gt;&gt; LightYellow</code></p>
-<p><code>&nbsp;BorderColor Gray</code></p>
-<p><code>&nbsp;FontName Impact</code></p>
-<p><code>}</code></p>
-<p>&nbsp;</p>
-<p><code>hide empty description</code></p>
-<p><code>State Display_Records as "Display Records"</code></p>
-<p><code>State Select_Record as "User Selects Record"</code></p>
-<p><code>State User_Selects_Component as "User Selects part of a 3D drawing"</code></p>
-<p><code>State Display_related_Actions as "Display any related actions"</code></p>
-<p><code>State User_Selects_Action as "User selects a custom action \nfor more information"</code></p>
-<p><code>State Display_Additional_Information as "Display custom information \nabout selected subcomponent"</code></p>
-<p>&nbsp;</p>
-<p><code>[*] --&gt; Display_Records : Fetch a list of records,\ne.g. Order Items</code></p>
-<p><code>Display_Records : These can be any record type</code></p>
-<p><code>Display_Records : A default 3D model can be displayed or static image</code></p>
-<p><code>Display_Additional_Information: e.g. Warranty or other record information</code></p>
-<p><code>Display_Records -right-&gt; Select_Record</code></p>
-<p><code>Select_Record -right-&gt; User_Selects_Component : Update 3D scene \n&amp; interaction</code></p>
-<p><code>User_Selects_Component -right-&gt; User_Selects_Action : Display any related actions</code></p>
-<p><code>User_Selects_Action -right-&gt; Display_Additional_Information</code></p>
-<p><code>Display_Additional_Information -up-&gt;[*] : User finishing activity \ne.g. order replacement part</code></p>
-<p><code>@enduml</code></p>
-<p><code>```</code></p>
+<pre><code class="language-html">```plantuml
+@startuml
+skinparam backgroundColor White
+skinparam state {
+
+ BackgroundColor LightBlue
+ BackgroundColor&lt;&lt;Warning&gt;&gt; LightYellow
+ BorderColor Gray
+ FontName Impact
+}
+
+hide empty description
+State Display_Records as "Display Records"
+State Select_Record as "User Selects Record"
+State User_Selects_Component as "User Selects part of a 3D drawing"
+State Display_related_Actions as "Display any related actions"
+State User_Selects_Action as "User selects a custom action \nfor more information"
+State Display_Additional_Information as "Display custom information \nabout selected subcomponent"
+
+[*] --&gt; Display_Records : Fetch a list of records,\ne.g. Order Items
+Display_Records : These can be any record type
+Display_Records : A default 3D model can be displayed or static image
+Display_Additional_Information: e.g. Warranty or other record information
+Display_Records -right-&gt; Select_Record
+Select_Record -right-&gt; User_Selects_Component : Update 3D scene \n&amp; interaction
+User_Selects_Component -right-&gt; User_Selects_Action : Display any related actions
+User_Selects_Action -right-&gt; Display_Additional_Information
+Display_Additional_Information -up-&gt;[*] : User finishing activity \ne.g. order replacement part
+@enduml
+```</code></pre>
 <figure class="image"><img src="/advancedrenderer_(context_actionmenu_.png"></figure>
 <p>These slots were meant to be used as needed, and data surrounding what we are rendering is supposed to flow from left to right, starting with ContextContent (1) and concluding on the Sidebar Content (4) with some interaction in between.&nbsp;</p>
 <h3>Context Content (1)</h3>
