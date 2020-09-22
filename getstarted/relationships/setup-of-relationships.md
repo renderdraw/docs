@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-21T22:57:12.877Z
+date: 2020-09-22T00:08:27.229Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -135,14 +135,19 @@ With RenderDraw's relationship management, these 3D drawings can be shared betwe
 
 The underlying drawing doesn't change, only the usecase and object on Salesforce did.
 
-Lets jump in and learn how to create relationships between a Salesforce object and a 3D drawing source. 
-# What is a RenderDraw Relationship? 
-In order to scale the quantities of objects we could reasonably display 3D models for, we have created a grouping of relationship objects that map to a given object in Salesforce that is User determined.
 
-From there, applicable fields are selected that contain  
+# What is a RenderDraw Relationship? 
+In order to scale the amount of objects we could reasonably display 3D models for, along with scale to the different situations you would want to interact with a 3D component, we have created a grouping of relationship objects that map to a given object in Salesforce that is User determined.
+  
 ![renderdraw_settings_default_crm_relationships_=1.7.png](/renderdraw_settings_default_crm_relationships_=1.7.png)
+From these objects, a schema can be derived, where applicable fields are selected that contain either subsections or locations  of the subsections of a URL of your 3D drawing. 
+
+Lets jump in and learn how to create relationships between a Salesforce object and a 3D drawing source. 
+
 # Create a Relationship
-Think of a RenderDraw relationship like a formula. This formula determines, by object, how we are going to fetch your 3D files and related resources for a given Salesforce Object record. At the end of the day, we are looking for a file in a remote destination, from the example above, 
+Think of a RenderDraw relationship like a formula. This formula determines, by object, how we are going to fetch your 3D files and related resources for a given Salesforce Object record. At the end of the day, we are looking for a file in a remote destination, from the example above, we can break down the URL into its composite parts.
+
+
 
 ![filepathbreakdown.png](/filepathbreakdown.png)
 Based on a set of 
@@ -156,6 +161,7 @@ Go to setup and search for Metadata
 Add a component to the record detail screen and save it using the lightning 
 # Relationship Strategies
 Using the right tool for the job is of the utmost importance.  
+
 ## What are you visualizing?
 If you are planning to render a single product or scene for your entire org, you likely do not need a relationship strategy or a relationship at all. Relationships are for scaling 3D over the size of a particular object type. 
 
