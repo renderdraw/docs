@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-22T19:23:37.034Z
+date: 2020-09-22T20:06:45.158Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -156,6 +156,7 @@ Based on a set of fields mapped with the relationship objects, we can compose a 
 Lets prove this by adding a 3D interaction onto multiple record types Lightning pages. Then we'll update the filename reference and display the results on all references.  
 
 ## Add 3D Drawing Field to objects
+Our primary purpose for this exercise is to visualize products, so we will start there. 
 
 You can create lookup fields to related objects for a simple 
 ![create_lookup_field_for_asset_1.png](/create_lookup_field_for_asset_1.png)
