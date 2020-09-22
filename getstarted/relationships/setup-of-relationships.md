@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-22T16:37:58.902Z
+date: 2020-09-22T19:23:37.034Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
