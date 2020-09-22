@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-22T15:48:29.474Z
+date: 2020-09-22T16:11:45.765Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -156,24 +156,24 @@ Based on a set of fields mapped with the relationship objects, we can compose a 
 Lets prove this by adding a 3D interaction onto multiple record types Lightning pages. Then we'll update the filename reference and display the results on all references.  
 
 ## Create a RenderDraw Setting
-- Setup
+### Setup
 > Go to setup by clicking the gear in the top right of the screen. Click Setup, and go to the search on the far left of the screen. Type in Metadata
 {.is-info}
 
-- Search for Metadata
+### Search for Metadata
 ![custommetadata_types_search.png](/custommetadata_types_search.png)
 > From there, we are creating a RenderDraw Setting, so lets select manage records for that type 
 {.is-info}
 
 ![custom_metadata_typesrenderdrawsettings.png](/custom_metadata_typesrenderdrawsettings.png)
-- Manage the relationships 
+### Manage the relationships 
 >  From here, we can either manage any current setting, or create a new one. Lets create a new setting for the file server we saw above. Note we selected defaults for control and light settings, and provided the label **File Server** and the Base URL **https://files.renderdraw.us/** which was common among all of the files we looked at earlier.
 {.is-info}
 
 ![createsettings.png](/createsettings.png)
 
 
-- Create the relationship
+## Create the relationship
 >  Now that our RenderDraw Settings are created, we have the first part of the formula (URL Position 1) of the needed information to fetch a 3D file complete with the Base URL.
 {.is-info}
 
@@ -181,15 +181,15 @@ Lets prove this by adding a 3D interaction onto multiple record types Lightning 
 
 ![custommetadata_types_search.png](/custommetadata_types_search.png)
 - Manage the relationships 
-- Create the relationship
 ![createrelationshipvalues.png](/createrelationshipvalues.png)
 
 ![relationshipsettingnewrecord.png](/relationshipsettingnewrecord.png)
 
 ## Render from your Relationship
+### Add the Lightning Component
 Add a component to the record detail screen and save it using the lightning 
 # Relationship Strategies
-Using the right tool for the job is of the utmost importance.  
+Using the right tool for the job is of the utmost importance to scale your 3D interactions.   
 
 ## What are you visualizing?
 If you are planning to render a single product or scene for your entire org, you likely do not need a relationship strategy or a relationship at all. Relationships are for scaling 3D over the size of a particular object type. 
@@ -262,7 +262,9 @@ OI --> Product
 
 
 ## Tips
-For easy conditional rendering for a component based on relational rendering, add an additional field to your  
+> For easy conditional rendering for a component based on relational rendering, add an additional field to your  
+{.is-info}
+
 
 
 
