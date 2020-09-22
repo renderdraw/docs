@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-22T01:24:21.685Z
+date: 2020-09-22T01:49:15.546Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -150,9 +150,19 @@ Think of a RenderDraw relationship like a formula. This formula determines, by o
 
 
 ![filepathbreakdown.png](/filepathbreakdown.png)
-Based on a set of 
+
+Based on a set of fields mapped with the relationship objects, we can compose a URL for every product record that exists for any company. The relationships are maintained alongside the data in Salesforce, so as the records in the Salesforce org gradually grow in number, the most up-to-date drawing is updated on each record by convention, ensuring a scalable experience for every record of that type.    
+
+Lets prove this by adding a 3D interaction onto multiple record types Lightning pages. Then we'll update the filename reference and display the results on all references.  
+
 ## Create a RenderDraw Setting
+- Setup
 Go to setup and search for Metadata
+- Search for Metadata
+![custommetadata_types_search.png](/custommetadata_types_search.png)
+- manage the relationships 
+- create the relationship
+
 ![basesettingdetails.png](/basesettingdetails.png)
 ## Create a Relationship Setting
 - Setup
