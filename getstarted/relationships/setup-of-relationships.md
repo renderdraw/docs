@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-22T01:49:15.546Z
+date: 2020-09-22T15:48:29.474Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -157,19 +157,31 @@ Lets prove this by adding a 3D interaction onto multiple record types Lightning 
 
 ## Create a RenderDraw Setting
 - Setup
-Go to setup and search for Metadata
+> Go to setup by clicking the gear in the top right of the screen. Click Setup, and go to the search on the far left of the screen. Type in Metadata
+{.is-info}
+
 - Search for Metadata
 ![custommetadata_types_search.png](/custommetadata_types_search.png)
-- manage the relationships 
-- create the relationship
+> From there, we are creating a RenderDraw Setting, so lets select manage records for that type 
+{.is-info}
+
+![custom_metadata_typesrenderdrawsettings.png](/custom_metadata_typesrenderdrawsettings.png)
+- Manage the relationships 
+>  From here, we can either manage any current setting, or create a new one. Lets create a new setting for the file server we saw above. Note we selected defaults for control and light settings, and provided the label **File Server** and the Base URL **https://files.renderdraw.us/** which was common among all of the files we looked at earlier.
+{.is-info}
+
+![createsettings.png](/createsettings.png)
+
+
+- Create the relationship
+>  Now that our RenderDraw Settings are created, we have the first part of the formula (URL Position 1) of the needed information to fetch a 3D file complete with the Base URL.
+{.is-info}
 
 ![basesettingdetails.png](/basesettingdetails.png)
-## Create a Relationship Setting
-- Setup
-- Search for Metadata
+
 ![custommetadata_types_search.png](/custommetadata_types_search.png)
-- manage the relationships 
-- create the relationship
+- Manage the relationships 
+- Create the relationship
 ![createrelationshipvalues.png](/createrelationshipvalues.png)
 
 ![relationshipsettingnewrecord.png](/relationshipsettingnewrecord.png)
@@ -217,6 +229,35 @@ OI --> Product
 ```
 With this in mind, we can potentially further re-utilize data to ensure when a new rendering path is available, we have a single source of truth for that product.
 ### The power of Salesforce lookups 
+```plantuml
+@startuml
+skinparam backgroundColor White
+skinparam state {
+
+  BackgroundColor LightBlue
+  BackgroundColor<<Warning>> LightYellow
+  BorderColor Gray
+  FontName Impact
+}
+skinparam arrow{
+	color white
+}
+
+hide empty description
+State Product as "Product"
+State OLI as "Opportunity Item"
+State QLI as "Quote Item"
+State OI as "Order Item"
+State Asset as "Asset"
+
+
+OLI --> Product
+QLI --> Product
+Asset --> Product
+OI --> Product
+@enduml
+  
+```
 ![renderdraw_relationship_management_overview.png](/renderdraw_relationship_management_overview.png)
 
 
