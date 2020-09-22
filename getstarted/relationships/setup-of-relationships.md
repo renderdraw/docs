@@ -2,7 +2,7 @@
 title: Setup of Relationships between Salesforce Objects and 3D files
 description: 
 published: true
-date: 2020-09-22T00:08:27.229Z
+date: 2020-09-22T01:24:21.685Z
 tags: relationships, metadata
 editor: markdown
 dateCreated: 2020-09-21T19:00:18.444Z
@@ -155,6 +155,13 @@ Based on a set of
 Go to setup and search for Metadata
 ![basesettingdetails.png](/basesettingdetails.png)
 ## Create a Relationship Setting
+- Setup
+- Search for Metadata
+![custommetadata_types_search.png](/custommetadata_types_search.png)
+- manage the relationships 
+- create the relationship
+![createrelationshipvalues.png](/createrelationshipvalues.png)
+
 ![relationshipsettingnewrecord.png](/relationshipsettingnewrecord.png)
 
 ## Render from your Relationship
