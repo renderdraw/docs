@@ -2,8 +2,8 @@
 title: Sign up as a partner or as a customer
 description: 
 published: true
-date: 2020-10-08T10:00:54.616Z
-tags: 
+date: 2020-10-08T10:11:09.637Z
+tags: guest, guests
 editor: markdown
 dateCreated: 2020-10-08T10:00:54.616Z
 ---
