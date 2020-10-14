@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: Lightning Component designed for interacting with advanced 3D Scenes within Salesforce
 published: true
-date: 2020-10-08T09:37:49.787Z
+date: 2020-10-14T11:58:03.171Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -331,6 +331,78 @@ dateCreated: 2020-09-18T21:21:42.005Z
     </thead>
     <tbody>
       <tr>
+        <td>
+          <h2>add2DImage</h2>
+        </td>
+        <td>
+          <p><strong>id</strong>&nbsp;</p>
+          <p>&nbsp;The id of the image player to add</p>
+          <p><strong>imageURL</strong>&nbsp;</p>
+          <p>&nbsp;The URL to the image</p>
+          <p><strong>width</strong>&nbsp;</p>
+          <p>&nbsp;The width of the image</p>
+          <p><strong>height</strong>&nbsp;</p>
+          <p>&nbsp;The height of the image</p>
+          <p><strong>positionX</strong>&nbsp;</p>
+          <p>&nbsp;The x-coordinate position to add the image to</p>
+          <p><strong>positionY</strong>&nbsp;</p>
+          <p>&nbsp;The y-coordinate position to add the image to</p>
+          <p><strong>positionZ</strong>&nbsp;</p>
+          <p>&nbsp;The z-coordinate position to add the image to</p>
+        </td>
+        <td>Add a floating image in 3D space</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>add2DText</h2>
+        </td>
+        <td>
+          <p><strong>id&nbsp;</strong></p>
+          <p>The id of the text to add</p>
+          <p><strong>text</strong>&nbsp;</p>
+          <p>&nbsp;The text to add</p>
+          <p><strong>size</strong>&nbsp;</p>
+          <p>&nbsp;The size of the text to add</p>
+          <p><strong>color</strong>&nbsp;</p>
+          <p>&nbsp;The color of the text to add</p>
+          <p><strong>componentName</strong>&nbsp;</p>
+          <p>&nbsp;The component to attach</p>
+          <p><strong>showOnlyOnHover</strong>&nbsp;</p>
+          <p>&nbsp;Auto-hide this text if the user isn't hovering over the named component. This is ignored if there isn't a component passed</p>
+        </td>
+        <td>Add floating 2D text that can be attached to a 3D component/node in the scene</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>add3DTextToScene</h2>
+        </td>
+        <td>
+          <p><strong>id</strong>&nbsp;</p>
+          <p>&nbsp;The id of the text to add to the scene</p>
+          <p><strong>text</strong>&nbsp;</p>
+          <p>&nbsp;The text to add to the scene</p>
+          <p><strong>font</strong>&nbsp;</p>
+          <p>&nbsp;What font is to be used, either comic, helvetica, or arial</p>
+          <p><strong>anchor</strong>&nbsp;</p>
+          <p>&nbsp;position of the text to anchor itself to- either left, center, right</p>
+          <p><strong>letterHeight</strong>&nbsp;</p>
+          <p>&nbsp;How tall the letters are (y-axis)</p>
+          <p><strong>letterThickness</strong>&nbsp;</p>
+          <p>&nbsp;How thick the letters are (depth, in three dimensions the Z axis)</p>
+          <p><strong>color</strong>&nbsp;</p>
+          <p>&nbsp;The hex color code of the text</p>
+          <p><strong>secondaryColor</strong>&nbsp;</p>
+          <p>&nbsp;The hex color code of the accent color on the text</p>
+          <p><strong>positionX</strong>&nbsp;</p>
+          <p>&nbsp;The x-coordinate position to add the text to</p>
+          <p><strong>positionY</strong>&nbsp;</p>
+          <p>&nbsp;The y-coordinate position to add the text to</p>
+          <p><strong>positionZ</strong>&nbsp;</p>
+          <p>&nbsp;The z-coordinate position to add the text to</p>
+        </td>
+        <td>Add 3D text to a given Scene</td>
+      </tr>
+      <tr>
         <td style="vertical-align:top;">
           <h2>addModelToScene</h2>
         </td>
@@ -376,6 +448,58 @@ dateCreated: 2020-09-18T21:21:42.005Z
           <p>The scale on the Z axis of the model to load</p>
         </td>
         <td>Add an additional model to the scene.</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>addPhotoDome</h2>
+        </td>
+        <td>
+          <p><strong>name</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The component to attach</p>
+          <p><strong>photoURL</strong></p>
+          <p>&nbsp;string</p>
+          <p>&nbsp;The URL to the photo</p>
+          <p><strong>size</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The size of the sphere (defaults to 15)</p>
+          <p><strong>limitCamera</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Limit the Camera Zoom to within the dome</p>
+        </td>
+        <td>Add 360° photo as a sphere where models can be rendered</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>addVideoPlayer</h2>
+        </td>
+        <td>
+          <p><strong>id</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The id of the video player to add</p>
+          <p><strong>videoURL</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The URL to the video</p>
+          <p><strong>width</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The width of the player</p>
+          <p><strong>height</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The height of the player</p>
+          <p><strong>positionX</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The x-coordinate position to add the video to</p>
+          <p><strong>positionY</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The y-coordinate position to add the video to</p>
+          <p><strong>positionZ</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The z-coordinate position to add the video to</p>
+          <p><strong>placeholderImageURL</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The URL to the image to display before playing the video</p>
+        </td>
+        <td>Add a floating video Player in 3D space</td>
       </tr>
       <tr>
         <td style="vertical-align:top;">
@@ -469,11 +593,21 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Hide displayed related media that is presented in the content area of this component</td>
       </tr>
       <tr>
-        <td style="vertical-align:top;">
-          <h2>loadAndApplyTextureToModel</h2>
+        <td>
+          <h2>loadAndApplyTextureMaterialToModel</h2>
         </td>
-        <td>&nbsp;</td>
-        <td>Load a texture and add it to a model.</td>
+        <td>
+          <p><strong>textureImageURL</strong>&nbsp;</p>
+          <p>string</p>
+          <p>&nbsp;The URL of the of the 3D model to load</p>
+          <p><strong>nodeUniqueId</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The uniqueId of the Model to apply the texture to</p>
+          <p><strong>materialName</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The name of the material you want to replace the texture of the material you are loading</p>
+        </td>
+        <td>Load a diffuse texture and add it to a model.</td>
       </tr>
       <tr>
         <td style="vertical-align:top;">
@@ -539,6 +673,38 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Programmatically select a component node within the 3D model. Raises RDraw:EVT_Renderer_Mesh_Selected on successful selection</td>
       </tr>
       <tr>
+        <td>
+          <h2>setupGround</h2>
+        </td>
+        <td>
+          <p><strong>imageURL</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The URL to the texture image</p>
+          <p><strong>heightMapURL</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The URL to the heightmap image</p>
+          <p><strong>width</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The width of the ground</p>
+          <p><strong>height</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The height of the ground</p>
+          <p><strong>maxheight</strong>&nbsp;</p>
+          <p>double</p>
+          <p>&nbsp;The max height of the ground</p>
+          <p><strong>minheight</strong></p>
+          <p>&nbsp;double</p>
+          <p>&nbsp;The minimum height of the ground</p>
+          <p><strong>subdivisions</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The number of subdivisions for the ground, this defaults to 10</p>
+        </td>
+        <td>
+          <p>Add a ground for your 3D scene, with or without a heightmap</p>
+          <p>&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
         <td style="vertical-align:top;">
           <h2>toggleEnableComponent</h2>
         </td>
@@ -557,6 +723,17 @@ dateCreated: 2020-09-18T21:21:42.005Z
           <p>Ensure the component is enabled regardless of its current state</p>
         </td>
         <td>Enable or disable a given 3D node by passing a uniqueId, name or id</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>updateBackgroundImage</h2>
+        </td>
+        <td>
+          <p><strong>imageURL</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The URL to the image</p>
+        </td>
+        <td>Update background to a image</td>
       </tr>
       <tr>
         <td style="vertical-align:top;">
