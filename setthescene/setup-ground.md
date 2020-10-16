@@ -2,7 +2,7 @@
 title: Setup Ground
 description: 
 published: true
-date: 2020-10-16T15:22:45.120Z
+date: 2020-10-16T19:26:36.568Z
 tags: advancedrenderer, ground, scene
 editor: markdown
 dateCreated: 2020-10-16T13:08:47.498Z
@@ -20,35 +20,37 @@ To setup a base ground element, you'll need an imageURL, and the size of the gro
 <img src="https://files.renderdraw.us/public/images/demoassets/customer%20demos/clubcar/Grass_001_COLOR2.jpg" />
 
 ##### Let's add this to our default scene at a size of 12 x 12
-Your Aura Componnt will wrap our AdvancedRenderer an element with an id of 'renderer' soo we can reference it later.
-> <RDraw:AdvancedRenderer aura:id="renderer" displayContext="true"
->                                 loadingImage="{!v.loadingImage}" displaySidebar="{!v.showSidebar}" spitShine="True"
->                                 allowSelection="true" recordId="{!v.recordId}" size="Large">
->               ...                  
->                                 
-></RDraw:AdvancedRenderer>
+Your Aura Component will wrap our AdvancedRenderer componoent with an id of 'renderer' so we can reference it later.
+```
+<RDraw:AdvancedRenderer aura:id="renderer" displayContext="true"
+                                 loadingImage="{!v.loadingImage}" displaySidebar="{!v.showSidebar}" spitShine="True"
+                                 allowSelection="true" recordId="{!v.recordId}" size="Large">
+               ...                                                   
+</RDraw:AdvancedRenderer>
+```
 
 We can bind to the [EVT_Renderer_Loaded](/events/EVT_Renderer_Loaded) event to set this up on load, or we can use a button that fires the function to add the ground to the scene. Either way, ensure the renderer has loaded prior to calling the method, otherwise nothing will occur. 
 
 From our controller method:
->  handleTestAddGround: function (component, event, helper) {
-> 
-> 	 let renderer = component.find('renderer');
-> 	 renderer.setupGround(
-> 'https://files.renderdraw.us/public/images/demoassets/customer%20demos/clubcar/Grass_001_COLOR2.jpg', undefined, 12, 12,
->             undefined, undefined, 1000
->         );
-> }
-
+```
+  handleTestAddGround: function (component, event, helper) {
+  let renderer = component.find('renderer');
+  renderer.setupGround('https://files.renderdraw.us/public/images/demoassets/customer%20demos/clubcar/Grass_001_COLOR2.jpg', undefined, 12, 12,
+             undefined, undefined, 1000
+         );
+ }
+```
 
 and the result should look something like this:
 ![groundwith_golfcartflatgrass.png](/groundwith_golfcartflatgrass.png)
-with flat grass. 
+with the image displayed as a flat texturem, in this case grass. 
 
 > Sampling is how many times an the image is repeated over the space of the ground.  
 {.is-info}
 
 ## Advanced Ground with Heightmap
+
+What happens when we want to provide a better experience than a flat image? When is the last time you have seen a completely flat texture
 > Performance consideration:
 More edges in 3D space requires more performance from your computer's graphics card. Consider your average user when deciding how tall your heightmaps are rendered using the setupGround method.
 {.is-warning}
