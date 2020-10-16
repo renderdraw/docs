@@ -2,7 +2,7 @@
 title: Setup Ground
 description: 
 published: true
-date: 2020-10-16T19:47:59.082Z
+date: 2020-10-16T19:48:39.043Z
 tags: advancedrenderer, ground, scene
 editor: markdown
 dateCreated: 2020-10-16T13:08:47.498Z
@@ -14,7 +14,7 @@ A ground is a nice way to provide some depth to your 3D scene by adding a founda
 Some notes about grounds elements,
 - Ground elements are not pickable by the user, they cannot be clicked
 - Ground elements, when added, ensure your loaded elements are not displayed below the ground, meaning if an element is loaded at 1,-4, 1 that element's position will be fixed by moving it above 0 on the y-axis, calculated by multiplying -1 * the lowest negative y point in three dimensions
-- Ground elements are always loaded at the point of origin, 0,0,0 and their dimensions are based on the width and height paramenter you pass in. 
+- Ground elements are always loaded at the point of origin, 0,0,0 and their dimensions are based on the width and height parameter you pass in. 
 - Ground elements will move with the scene when interacting
 ## Base Ground
 To setup a base ground element, you'll need an imageURL, and the size of the ground you are going to uss. Remember, the image you will be loading in will be downloaded every time a user visits your scene, with that in mind, we'd reccomend keeping the image as small as possible. Take a look at our example grass image we use here (1000x1000):
