@@ -1,9 +1,9 @@
 ---
 title: Setup Ground
-description: 
+description: A breakdown of how to add a ground for your 3D scene within Salesforce
 published: true
-date: 2020-10-16T19:48:39.043Z
-tags: advancedrenderer, ground, scene
+date: 2020-10-16T19:49:14.045Z
+tags: advancedrenderer, ground, scene, heightmap
 editor: markdown
 dateCreated: 2020-10-16T13:08:47.498Z
 ---
