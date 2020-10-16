@@ -2,7 +2,7 @@
 title: Setup Ground
 description: 
 published: true
-date: 2020-10-16T19:47:10.019Z
+date: 2020-10-16T19:47:48.153Z
 tags: advancedrenderer, ground, scene
 editor: markdown
 dateCreated: 2020-10-16T13:08:47.498Z
@@ -59,7 +59,7 @@ From the <a href="https://en.wikipedia.org/wiki/Heightmap">Wikipedia entry:</a>
 > In computer graphics, a heightmap or heightfield is a raster image used mainly as Discrete Global Grid in secondary elevation modeling. Each pixel store values, such as surface elevation data, for display in 3D computer graphics. A heightmap can be used in bump mapping to calculate where this 3D data would create shadow in a material, in displacement mapping to displace the actual geometric position of points over the textured surface, or for terrain where the heightmap is converted into a 3D mesh.
 
 in laymens terms, this just means we will use an image to determine where our grass should be tall versus where it should remain flat. The heightmap image we will be using for this example looks like this: 
-<img src="https://files.renderdraw.us/public/images/demoassets/customer%20demos/clubcar/Grass_001_ROUGH.jpg" width="250" />
+<img src="https://files.renderdraw.us/public/images/demoassets/customer%20demos/clubcar/Grass_001_ROUGH.jpg" />
 The heightmap is black and white representation of where our image should be tall or short based on how dark or light that pixel is, relative to the texture we are rendering over it. 
 
 Now our same function can be invoked, using the height map's URL and a few additional parameters for height. 
