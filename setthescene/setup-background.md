@@ -2,7 +2,7 @@
 title: Setup Background
 description: Setup your scene's background using either an image or a photodome
 published: true
-date: 2020-10-17T16:12:17.393Z
+date: 2020-10-17T16:24:48.548Z
 tags: background, scene
 editor: markdown
 dateCreated: 2020-10-16T20:14:57.711Z
@@ -21,10 +21,13 @@ https://files.renderdraw.us/public/images/demoassets/customer%20demos/clubcar/go
 in action:
 <video autoplay loop src="/bgphoto.mp4" />
 ## PhotoDome
-In order to use the PhotoDome, we need a source image that is "Equirectangular", without an equirectangular source the method won't function correctly.
+In order to use the PhotoDome, we need a source image that is "Equirectangular", without an equirectangular source the method won't function correctly. Effectively, this is the output from a 350º camera, or application that can take a 360º photo with a standard camera, such as the <a href="https://www.amazon.com/Ricoh-Theta-360-Spherical-Camera/dp/B074W5BKYS"> Ricoh Thera 360º camera</a>. As a general rule, the smaller the output of the image, the better the load time for the user experience. 
+
+to add a photodome, you have to call the 
 
 
 Example of equirectangular image:
 <video autoplay loop src="/photodome.mov" />
 
 ## Performance considerations
+As with most things dealing with computer graphics, the more intense the experience is in terms of complexities 
