@@ -2,7 +2,7 @@
 title: Setup Background
 description: Setup your scene's background using either an image or a photodome
 published: true
-date: 2020-10-17T20:06:24.019Z
+date: 2020-10-17T20:07:03.092Z
 tags: background, scene
 editor: markdown
 dateCreated: 2020-10-16T20:14:57.711Z
@@ -59,8 +59,7 @@ takes four parameters:
 | ----------- | ----------- | ----------- | ----------- |
 | name        | Title       | true |The name of the component to add (For reference later)|
 | photoURL    | Text        | true | The URL of the remote equirectangular image to use as the domes background |
-| size        | Text        |false |The size of the photodome to add (defaults to 15)
- |
+| size        | Text        |false |The size of the photodome to add (defaults to 15)|
 | limitCamera | boolean     |false | whether or not to limit the cameras radius to fit inside the dome |
 
 for this example, we will use this 360º photo as a background:
