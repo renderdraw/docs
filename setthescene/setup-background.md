@@ -2,19 +2,19 @@
 title: Setup Background
 description: Setup your scene's background using either an image or a photodome
 published: true
-date: 2020-10-17T20:05:01.810Z
+date: 2020-10-17T20:06:24.019Z
 tags: background, scene
 editor: markdown
 dateCreated: 2020-10-16T20:14:57.711Z
 ---
 
 # Setup a background
-When looking At a product in real life things tend to not float in front of a solid color background. With that in mind we've decided to provide two different methods to give your seems a bit of dimension. The first is providing a static photo as a background, and the second is providing qhat we consider a photodome.
+When looking At a product in real life things tend to not float in front of a solid color background. With that in mind we've decided to provide two different methods to give your seems a bit of dimension. The first is providing a static photo as a background, and the second is providing what we consider a photodome.
 
 The simplistic breakdown of the two options are, do you want the background to move with the user's interaction? If so, you want a photodome, otherwise, a simple photo background is likely the more performant option that will still make your scene standout.
 
 ## Photo Background
-The photo background is exactly what it sounds like a photograph to use his background instead of the static color that we provide. To provide a new photo for your background you must first host a photo somewhere that is probably accessible from your salesforce instance. This will be added to your scene by it's URL and one of our handy API methods, lets take a look.
+The photo background is exactly what it sounds like a photograph to use his background instead of the static color that we provide. To provide a new photo for your background you must first host a photo somewhere that is probably accessible from your salesforce instance. This will be added to your scene by it's URL and one of our handy API methods, let's take a look.
 
 Do you have a photo background first we need an instance of our advanced rendering component added to your custom component.
 Using this image as a background:
@@ -58,7 +58,7 @@ takes four parameters:
 | Name        | type        |  required   |  description|
 | ----------- | ----------- | ----------- | ----------- |
 | name        | Title       | true |The name of the component to add (For reference later)|
-| photoURL    | Text        | true | The URL of the rempte equirectangular image to use as the domes background |
+| photoURL    | Text        | true | The URL of the remote equirectangular image to use as the domes background |
 | size        | Text        |false |The size of the photodome to add (defaults to 15)
  |
 | limitCamera | boolean     |false | whether or not to limit the cameras radius to fit inside the dome |
@@ -87,4 +87,6 @@ And our output should look like this:
 
 Notice the environment moving as the mouse moves? This is the big difference in experience.
 ## Performance considerations
-As with most things dealing with computer graphics, the more intense the experience is in terms of complexities, the beefier the graphics card required. What is the average hardware your users will be using to access Salesforce? If this is standardized, go for it! otherwise, it may be wise (unless using more simplistic 3D drawings) to provide your users with a 2D image background or standard color for an improved interaction. 
+As with most things dealing with computer graphics, the more intense the experience is in terms of complexities, the beefier the graphics card required. 
+
+What is the average hardware your users will be using to access Salesforce? If this is standardized, go for it! otherwise, it may be wise (unless using more simplistic 3D drawings) to provide your users with a 2D image background or standard color for an improved interaction. 
