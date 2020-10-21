@@ -2,7 +2,7 @@
 title: Scene Settings & Setup
 description: 
 published: false
-date: 2020-10-21T00:28:45.071Z
+date: 2020-10-21T00:44:29.572Z
 tags: scenesetup
 editor: markdown
 dateCreated: 2020-10-21T00:27:22.635Z
@@ -67,7 +67,7 @@ dateCreated: 2020-10-21T00:27:22.635Z
       "componentName": "Golf_Car_XRT_Body"
     },
     {
-      "label": "Replacable XRT Seat",
+      "label": "Replaceable XRT Seat",
       "componentName": "Golf_Car_XRT_Seat"
     }
   ]
