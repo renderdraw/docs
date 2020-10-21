@@ -1,8 +1,8 @@
 ---
 title: Scene Settings & Setup
 description: 
-published: true
-date: 2020-10-21T00:27:22.635Z
+published: false
+date: 2020-10-21T00:28:45.071Z
 tags: scenesetup
 editor: markdown
 dateCreated: 2020-10-21T00:27:22.635Z
