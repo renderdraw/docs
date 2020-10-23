@@ -2,7 +2,7 @@
 title: Scene Settings & Setup
 description: 
 published: false
-date: 2020-10-23T17:20:55.920Z
+date: 2020-10-23T17:29:43.191Z
 tags: scenesetup
 editor: markdown
 dateCreated: 2020-10-21T00:27:22.635Z
@@ -16,7 +16,11 @@ How does this scale?
 
 Spoiler alert: it doesn't.
 
-A custom component 
+A custom component will most often describe a single scene, unless there is a custom data definition defined, in which case- godspeed  
+For the majority of use cases, we will have more than one subject we should be 
+
+
+As of app version 1.8, we create Scene settings version 1.0. This settings data is structured like this:  
 
 
 ```
