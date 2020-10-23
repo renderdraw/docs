@@ -2,7 +2,7 @@
 title: Scene Settings & Setup
 description: 
 published: false
-date: 2020-10-23T17:29:43.191Z
+date: 2020-10-23T17:39:14.454Z
 tags: scenesetup
 editor: markdown
 dateCreated: 2020-10-21T00:27:22.635Z
@@ -86,3 +86,7 @@ As of app version 1.8, we create Scene settings version 1.0. This settings data 
   ]
 }
 ```
+
+## Parent Scene Settings
+
+More often than not, you won't be utilizing a single object for your 3D scenes. Most frequently, we start with a product visualization, using the Product2 object. 
