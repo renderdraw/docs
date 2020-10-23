@@ -2,7 +2,7 @@
 title: Scene Settings & Setup
 description: 
 published: false
-date: 2020-10-23T18:42:26.077Z
+date: 2020-10-23T18:45:56.239Z
 tags: scenesetup
 editor: markdown
 dateCreated: 2020-10-21T00:27:22.635Z
@@ -104,8 +104,9 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 ```
 
 
-Sounds complex? It really isn't. Simply setup a Scene Settings field on your base object relationship, as we did in the steps above (In this case the Product relationship)  and setup a child relationship object for a given object. For this example, we'll use Assets, as pretty much
-and initialize the Scene Settings loo 
+Sounds complex? It really isn't. Simply setup a Scene Settings field on your base object relationship, as we did in the steps above (In this case the Product relationship)  and setup a child relationship object for a given object. For this example, we'll use Assets, as pretty much every Salesforce org has this object. For this relationship, we now have to populate 
+
+
 
 
 
