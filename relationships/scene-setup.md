@@ -2,13 +2,22 @@
 title: Scene Settings & Setup
 description: 
 published: false
-date: 2020-10-21T00:44:29.572Z
+date: 2020-10-23T17:20:55.920Z
 tags: scenesetup
 editor: markdown
 dateCreated: 2020-10-21T00:27:22.635Z
 ---
 
-# Header
+# Scene Settings
+
+Scene Settings are the data description of the 3D scene as your users will see it. If you setup a custom component and call our component APIs to create a 3D experience, you are manually describing the scene through attributes, and a series of API calls based on events. 
+
+How does this scale? 
+
+Spoiler alert: it doesn't.
+
+A custom component 
+
 
 ```
 {
