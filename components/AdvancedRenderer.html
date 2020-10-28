@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: Lightning Component designed for interacting with advanced 3D Scenes within Salesforce
 published: true
-date: 2020-10-22T08:06:40.559Z
+date: 2020-10-28T16:47:57.267Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -14,7 +14,6 @@ dateCreated: 2020-09-18T21:21:42.005Z
 <h1>Usage Notes&nbsp;</h1>
 <p>Advanced Renderer should be used in any custom development scenario. This component was created to allow for the contextual interaction with other data within Salesforce. If you need a custom interaction beyond 3D visualization, this component is likely what you will be using. AdvancedRenderer can be utilized in simple rendering scenarios as well, with the option of utilizing slots.</p>
 <h2>Slots</h2>
-<p>&nbsp;</p>
 <p>AdvancedRenderer was designed for extensibility, with that in mind, solving for every use case isn't really possible without knowing how each implementation and custom project needs to display 3D within Salesforce. Salesforce Lightning components are composable, and the AdvancedRenderer has prebuilt slots for you to pass custom components into.&nbsp;</p>
 <p>A common interaction flow is searching for a detail record from record set, and displaying a 3D drawing or 2D image based on that selection. in the diagram below, we walk through displaying a list of order items, fetching the details of an item, displaying the appropriate drawing and if selected the related actions to its subcomponents. These can lead to the user &nbsp;attempting to either re-order an item or create a service order based on a warranty claim.</p>
 <figure class="image"><img src="/user_interaction_diagram_for_slots1.png"></figure>
@@ -34,7 +33,6 @@ dateCreated: 2020-09-18T21:21:42.005Z
 <p>We suggest limiting the height of components passed into this slot to approximately ⅓ of the parents components overall height, as the ActionInformationPane shares vertical space with the rendered content, and the 3D element is typically the star of the show in a user's eyes.</p>
 <h3>Sidebar Content (4)</h3>
 <p>The Sidebar content slot provides space for additional information that is to be displayed based on an interaction in the 3D content pane.&nbsp;</p>
-<p>Visibility of &nbsp;</p>
 <h3>Passing components into a slot</h3>
 <p>Passing components into slots are as simple as using the aura:set tag with the name of the slot you would like to use.&nbsp;</p>
 <pre><code class="language-html">&lt;RDraw:AdvancedRenderer aura:id="renderer" displayContext="true"  loadingImage="{!v.loadingImage}"
