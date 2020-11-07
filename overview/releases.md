@@ -2,7 +2,7 @@
 title: Release Notes
 description: 
 published: true
-date: 2020-11-07T10:52:01.517Z
+date: 2020-11-07T11:00:11.461Z
 tags: releasenotes, releases
 editor: markdown
 dateCreated: 2020-11-07T10:17:06.074Z
@@ -90,7 +90,7 @@ For those unfamiliar all of our components of an active APIs if you can hear a f
 - 	removeComponent
 		Given we now have the ability to dynamically add additional components to the 3-D saying we obviously need the ability to remove components for the 3-D see it is extremely useful for configuration and other dynamics scenes that are based off of data within salesforce.
 
-Additionally we have added the ability for what we're calling the playground. which basically means a scene without a base 3D model. This is extremely useful if you're not mapping every 3D scene to a given model in a 1-1 fashion. We realize not every 3-D interaction is going to start with a model and we have provided the functionality to setup a scene as a blank slate. This is also extremely important for what wee have planned for the product moving forward, so this is setting the foundation for future releases, which you should be excited about .
+Additionally we have added the ability for what we're calling the playground. This basically means a scene without a base 3D model. This is extremely useful if you're not mapping every 3D scene to a given model in a 1-1 fashion. We realize not every 3-D interaction is going to start with a model and we have provided the functionality to setup a scene as a blank slate. This is also extremely important for what wee have planned for the product moving forward, so this is setting the foundation for future releases, which you should be excited about .
 
 ### Events raised:
 If you're unfamiliar, renderdraw processes a lot of events during 3-D scene interaction and set up we were always raising events that you can subscribe to, but now we've added several additional events that allow for full customization of your 3d  environment based off of what's happening within during the render cycle and during user interaction. Here are a few examples of new events added 
