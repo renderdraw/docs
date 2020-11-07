@@ -2,7 +2,7 @@
 title: Release Notes
 description: 
 published: true
-date: 2020-11-07T10:17:06.074Z
+date: 2020-11-07T10:52:01.517Z
 tags: releasenotes, releases
 editor: markdown
 dateCreated: 2020-11-07T10:17:06.074Z
@@ -108,10 +108,77 @@ Positional information along with unique identifier IDs extremely useful if you 
 - We are now adding an anti-aliasing post process that makes every scene sharper. 
 - Further improving the spit shine feature 
 
+>  1.7
+ August 16th 2020
+{.is-info}
+
+---
+> 1.6
+ August 5th 2020
+{.is-info}
+
+---
+> 1.5
+ June 24th 2020 
+{.is-info}
 
 
 ---
+> 1.4
+June 1st 2020
+{.is-info}
+
+--- 
+> 1.3
+> Jan. 7th 2020
+{.is-info}
+
+For our 1.3 release, we started with our stated goal for our app to allow 3D interactions "Anywhere in Salesforce". With this broadening of usage, our users get to utilize our app in any way they can conceive. A truly flexible approach, anywhere within Salesforce. Also, explosions.
+
+#### New Components
+**FileSelector**
+FileSelector was created to allow the interaction with 3D files that exist within Salesforce Files. By passing in a recordId (through a Salesforce Flow or by placing on the Lightning Record Page), we fetch the latest versions of Attachments, and display the relevant 3D files as a list.
+
+When Selecting, a 3D interaction pop-up displays and the drawing is loaded directly from Salesforce. There are no file limitation sizes to these files, and this component can be used dynamically in a Flow.  
+
+#### Exceptional Features
+**Explosions!**
+Explode meshes with ease. Select "Show Explosion Bar" from the ActionMenu, and use the slider to explode your drawings to gain more perspective on your products / materials
+
+**Screen Shots**
+After you pan, zoom and explode you can take a screenshot of the rendering to include in your Sales or Service scenario.  
+
+**ActionMenu**
+Go beyond standard rendering by clicking the gear in your rendering, Actions include Debug, Take Screenshot and Explode
+
+**Scene Debugging**
+Break Down the complexities of a 3D scene with ease- Explore layers, lighting and effects applied to your drawings
+
+**Communities Usage**
+Ability to utilize a Communities URL structure for Partner or Customer Community. This is set within the Lightning component configuration by a checkbox
+
+**Use Salesforce Files for Renderings** 
+Pass a ContentVersion to the Renderer in order to fetch and render a 3D file hosted by Salesforce
+
+**User Interaction indication**
+Know when your users have actually reviewed your drawings, and utilize them. A flag (hasUserInteracted) is set once a user interacts with the 3D scene.
+
+---
+
+> **1.2** 
+September 3rd 2019
+{.is-info}
 
 
+This version added:
+* Internationalization
+    * Translations have been added for every language that Salesforce supports 
+* Custom development support
+    * Simple render component can now be used in custom development scenarios beyond record pages. Add RenderDraw functionality to your lightning component/page
+ 
+This version fixed:
+* Loading additional resources 
+    * The loading of any resources defined within your 3D renderings are now auto fetched based on relative urls
+* Removal of an unused field on the product object 
 
 
