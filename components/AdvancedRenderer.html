@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: Lightning Component designed for interacting with advanced 3D Scenes within Salesforce
 published: true
-date: 2020-11-07T12:48:40.406Z
+date: 2020-11-07T12:55:59.585Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -630,6 +630,29 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
+          <h2>highlightComponent</h2>
+        </td>
+        <td>
+          <p><strong>nodeId</strong></p>
+          <p>&nbsp;string&nbsp;</p>
+          <p>The uniqueId of the component to highlight</p>
+          <p><strong>name</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The name of the component to highlight</p>
+          <p><strong>enabled</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not to highlight the component (remove highlight if false)</p>
+          <p><strong>color</strong></p>
+          <p>&nbsp;string&nbsp;</p>
+          <p>The hex code (starting with #) to use for the highlight- defaults to orange</p>
+          <p><strong>zoomAndFocusOnElement</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Zoom the camera to the highlighted element</p>
+        </td>
+        <td>Find a component by name or Id and highlight it with the color provided</td>
+      </tr>
+      <tr>
+        <td>
           <h2>loadAndApplyTextureMaterialToModel</h2>
         </td>
         <td>
@@ -661,10 +684,10 @@ dateCreated: 2020-09-18T21:21:42.005Z
           <p>The cameras position on the Z-Axis</p>
           <p><strong>alpha</strong></p>
           <p>double</p>
-          <p>Defines the camera rotation along the longitudinal axis</p>
+          <p>Defines the camera rotation along the longitudinal axis (degrees)</p>
           <p><strong>beta</strong></p>
           <p>double</p>
-          <p>Defines the camera rotation along the latitudinal axis</p>
+          <p>Defines the camera rotation along the latitudinal axis (degrees)</p>
         </td>
         <td>Position the camera in 3D space.</td>
       </tr>
@@ -734,6 +757,8 @@ dateCreated: 2020-09-18T21:21:42.005Z
           <p><strong>subdivisions</strong>&nbsp;</p>
           <p>double&nbsp;</p>
           <p>The number of subdivisions for the ground, this defaults to 10</p>
+          <p><strong>groundY</strong>&nbsp;<br>double&nbsp;</p>
+          <p>The height on the y axis to render this ground, this defaults to 0.0</p>
         </td>
         <td>
           <p>Add a ground for your 3D scene, with or without a heightmap</p>
@@ -790,6 +815,27 @@ dateCreated: 2020-09-18T21:21:42.005Z
           <p>The hex color to update the node with</p>
         </td>
         <td>Update a given 3D component node to the passed hex color code.</td>
+      </tr>
+      <tr>
+        <td>updateLight&nbsp;</td>
+        <td>
+          <p><strong>name</strong></p>
+          <p>&nbsp;string&nbsp;</p>
+          <p>The name of the light to update</p>
+          <p><strong>enable</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not the light is enabled (turned on)</p>
+          <p><strong>intensity</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The intensity of the light</p>
+          <p><strong>diffuseColor</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The hex code (starting with #) of the basic color of the light</p>
+          <p><strong>specularColor</strong>&nbsp;</p>
+          <p>string</p>
+          <p>The hex code (starting with #) of the light that produces a highlight color on an object</p>
+        </td>
+        <td>Add a new light to the scene</td>
       </tr>
     </tbody>
   </table>
