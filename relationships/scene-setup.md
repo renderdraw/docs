@@ -2,7 +2,7 @@
 title: Scene Settings & Setup
 description: 
 published: false
-date: 2020-10-23T18:45:56.239Z
+date: 2020-11-14T17:36:53.508Z
 tags: scenesetup
 editor: markdown
 dateCreated: 2020-10-21T00:27:22.635Z
@@ -20,7 +20,7 @@ A custom component will most often describe a single scene, unless there is a cu
 For the majority of use cases, we will have more than one subject we should be 
 
 
-As of app version 1.8, we create Scene settings version 1.0. This settings data is structured like this:  
+As of app version 1.8, we create Scene settings version 1.0. This can be added to your object by first creating a **Scene Settings** lookup on your Relationship  This settings data is structured like this:  
 
 
 ```
@@ -36,7 +36,7 @@ As of app version 1.8, we create Scene settings version 1.0. This settings data 
     "text": []
 }
 ```
-
+Breaking this down a bit further, the version, lastSaved and sceneName are all internal, so setting those up is not needed by you. 
 ```
 {
   "version": 1,
