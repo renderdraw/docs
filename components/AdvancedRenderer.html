@@ -2,7 +2,7 @@
 title: Advanced Renderer
 description: Lightning Component designed for interacting with advanced 3D Scenes within Salesforce
 published: true
-date: 2021-06-01T15:13:58.607Z
+date: 2021-06-01T15:46:29.799Z
 tags: advancedrenderer, component, slots, events
 editor: ckeditor
 dateCreated: 2020-09-18T21:21:42.005Z
@@ -395,6 +395,32 @@ dateCreated: 2020-09-18T21:21:42.005Z
       </tr>
       <tr>
         <td>
+          <h2>addComponentTransformHandles</h2>
+        </td>
+        <td>
+          <p><strong>componentName</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The name of the 3D node to add the handles to</p>
+          <p><strong>enableSizeHandles</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not to allow for the resizing of the underlying element</p>
+          <p><strong>enableRotationHandles</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not to allow for the rotation of the underlying element</p>
+          <p><strong>enablePositionHandles</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not to allow for the position of the underlying element</p>
+          <p><strong>usePointerToAttachHandles</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not to attach the selected handles when you click on an added component (named above)</p>
+          <p><strong>clearHandlesOnEmptyPointerEvent</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not to detach the handles when you click away from an added</p>
+        </td>
+        <td>Used to add position, rotation and size handles to a set of components by name.</td>
+      </tr>
+      <tr>
+        <td>
           <h2>addLight</h2>
         </td>
         <td>
@@ -570,6 +596,41 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Still in our 'labs' status. Adds a widget to our scene. More to come</td>
       </tr>
       <tr>
+        <td>
+          <h2>aimAndPositionCamera</h2>
+        </td>
+        <td>
+          <p><strong>positionx&nbsp;</strong></p>
+          <p>double</p>
+          <p>The cameras position on the X-Axis</p>
+          <p>position&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The cameras position on the Y-Axis</p>
+          <p>positions&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The cameras position on the Z-Axis</p>
+          <p><strong>positionalpha</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>Defines the camera rotation along the logitudinal axis</p>
+          <p><strong>positionbeta</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>Defines the camera rotation along the latitudinal axis</p>
+          <p><strong>aimx</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The cameras focus on the X-Axis</p>
+          <p><strong>aimy</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The cameras focus on the Y-Axis</p>
+          <p><strong>aimz</strong>&nbsp;</p>
+          <p>double&nbsp;</p>
+          <p>The cameras focus on the Z-Axis</p>
+          <p><strong>nodeName</strong></p>
+          <p>string&nbsp;</p>
+          <p>The name of the 3D node to focus on</p>
+        </td>
+        <td>Position the camera in 3D space and aim at a subject.</td>
+      </tr>
+      <tr>
         <td style="vertical-align:top;">
           <h2>aimCamera</h2>
         </td>
@@ -618,6 +679,21 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Display related media instead of the 3D drawing</td>
       </tr>
       <tr>
+        <td>findNode</td>
+        <td>
+          <p><strong>name</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The name of the node</p>
+          <p><strong>prefixesToIgnore</strong>&nbsp;</p>
+          <p>string[]&nbsp;</p>
+          <p>A list of strings to ignore if they precede the name value, e.g. a value of ['ASD_'] passed along with the 'name' parameter of IceCream would successfully return a 3D node named 'ASD_IceCream'</p>
+          <p><strong>suffixesToIgnore&nbsp;</strong></p>
+          <p>string[]</p>
+          <p>A list of strings to ignore if they follow the name value, e.g. a value of ['_ASM'] passed along with the 'name' parameter of IceCream would successfully return a 3D node named 'IceCream_ASM'</p>
+        </td>
+        <td>Returns an object containing the Node information from the 3D scene. If no node is found, ths returns nothing</td>
+      </tr>
+      <tr>
         <td style="vertical-align:top;">
           <h2>getCameraPositionandTarget</h2>
         </td>
@@ -630,6 +706,13 @@ dateCreated: 2020-09-18T21:21:42.005Z
         </td>
         <td>&nbsp;</td>
         <td>Fetch the 3D model's hierarchy. Must subscribe to RDraw:EVT_Renderer_Get_Hierarchy for response</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>getListOfComponentNames</h2>
+        </td>
+        <td>&nbsp;</td>
+        <td>Fetch a flat list of all of the names of each 3D Node in the scene</td>
       </tr>
       <tr>
         <td style="vertical-align:top;">
@@ -660,6 +743,23 @@ dateCreated: 2020-09-18T21:21:42.005Z
           <p>Zoom the camera to the highlighted element</p>
         </td>
         <td>Find a component by name or Id and highlight it with the color provided</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>highlightMultipleComponents</h2>
+        </td>
+        <td>
+          <p><strong>names</strong>&nbsp;</p>
+          <p>string[]&nbsp;</p>
+          <p>A list of strings of component names to highlight</p>
+          <p><strong>color</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The hex code (starting with #) to use for the highlight- defaults to orange</p>
+          <p><strong>enabled</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>Whether or not to highlight the component (remove highlight if false)</p>
+        </td>
+        <td>Highlight several components in the scene</td>
       </tr>
       <tr>
         <td>
@@ -702,6 +802,29 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Position the camera in 3D space.</td>
       </tr>
       <tr>
+        <td>
+          <h2>raiseInteractionEvent</h2>
+        </td>
+        <td>
+          <p><strong>name</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The name of the action</p>
+          <p><strong>type</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>The type of the action, one of change,focus,focuslost</p>
+          <p><strong>label</strong>&nbsp;</p>
+          <p>string&nbsp;</p>
+          <p>A label used from the interaction (typically an Input element on configuration)</p>
+          <p><strong>value</strong>&nbsp;</p>
+          <p>object&nbsp;</p>
+          <p>The updated value from the interaction</p>
+          <p><strong>metadata</strong>&nbsp;</p>
+          <p>object&nbsp;</p>
+          <p>Additional information for the event</p>
+        </td>
+        <td>Used to call actions that were setup within the 'interactions' section of the Scene setup</td>
+      </tr>
+      <tr>
         <td style="vertical-align:top;">
           <h2>removeComponent</h2>
         </td>
@@ -711,6 +834,15 @@ dateCreated: 2020-09-18T21:21:42.005Z
           <p>The uniqueId to find and remove.</p>
         </td>
         <td>Removes the given component from a scene</td>
+      </tr>
+      <tr>
+        <td>removeComponentHandles</td>
+        <td>
+          <p><strong>componentNames</strong>&nbsp;</p>
+          <p>object&nbsp;</p>
+          <p>The list of 3D node names to add the handles to</p>
+        </td>
+        <td>Used to add position, rotation and size handles to a set of components by name.</td>
       </tr>
       <tr>
         <td style="vertical-align:top;">
@@ -776,6 +908,17 @@ dateCreated: 2020-09-18T21:21:42.005Z
         </td>
       </tr>
       <tr>
+        <td>
+          <h2>takeSnapshot&nbsp;</h2>
+        </td>
+        <td>
+          <p><strong>download</strong>&nbsp;</p>
+          <p>boolean&nbsp;</p>
+          <p>If true, the screenshot will be downloaded directly to the user, otherwise, the snapshot will be returned in an event response</p>
+        </td>
+        <td>Take a snapshot of the scene</td>
+      </tr>
+      <tr>
         <td style="vertical-align:top;">
           <h2>toggleEnableComponent</h2>
         </td>
@@ -827,7 +970,20 @@ dateCreated: 2020-09-18T21:21:42.005Z
         <td>Update a given 3D component node to the passed hex color code.</td>
       </tr>
       <tr>
-        <td>updateLight&nbsp;</td>
+        <td>
+          <h2>updateEnvironmentLightTexture</h2>
+        </td>
+        <td>
+          <p><strong>includedTextureName</strong></p>
+          <p>string</p>
+          <p>&nbsp;The name of the included texture to use, must be one of photoStudio, dusk, emptyWarehouse, partlycloudy, country</p>
+        </td>
+        <td>Change the lighting texture to use (for refraction)</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>updateLight&nbsp;</h2>
+        </td>
         <td>
           <p><strong>name</strong></p>
           <p>&nbsp;string&nbsp;</p>
