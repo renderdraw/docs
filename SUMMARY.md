@@ -99,6 +99,7 @@
             * [Setup Logic for Interactions](usage-scenarios/use-cases/3d/admin/examples/setup-for-3d-visual-configuration-scenarios/salesforce-cpq/setup-logic-for-interactions.md)
           * [Salesforce Revenue Cloud Advanced (RCA)](usage-scenarios/use-cases/3d/admin/examples/setup-for-3d-visual-configuration-scenarios/salesforce-revenue-cloud-advanced-rca/README.md)
             * [Setup Logic for Interactions](usage-scenarios/use-cases/3d/admin/examples/setup-for-3d-visual-configuration-scenarios/salesforce-revenue-cloud-advanced-rca/setup-logic-for-interactions.md)
+            * [Revenue Cloud Addon - Administrator Guide](usage-scenarios/use-cases/3d/admin/examples/setup-for-3d-visual-configuration-scenarios/salesforce-revenue-cloud-advanced-rca/revenue-cloud-addon-administrator-guide.md)
           * [Conga CPQ](usage-scenarios/use-cases/3d/admin/examples/setup-for-3d-visual-configuration-scenarios/conga-cpq.md)
           * [Custom Configuration Scenarios](usage-scenarios/use-cases/3d/admin/examples/setup-for-3d-visual-configuration-scenarios/custom-configuration-scenarios.md)
         * [3D Product Photography](usage-scenarios/use-cases/3d/admin/examples/3d-product-photography.md)
