@@ -1,6 +1,6 @@
 # Setup Logic for Interactions
 
-The integration between RenderDraw and Salesforce RCA is powered by RenderDraw subscribing to RCA's Lightning Messaging Service (LMS) messages and taking action based on the content.
+The integration between RenderDraw and Salesforce RCA is powered by RenderDraw subscribing to RCA's messages and taking action based on the content.
 
 **Tasks:**
 
