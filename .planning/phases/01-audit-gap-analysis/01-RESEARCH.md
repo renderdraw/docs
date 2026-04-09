@@ -9,9 +9,11 @@
 
 Researched the existing GitBook documentation coverage against the actual source code across all three RenderDraw packages (main, PropelPLM, AssetDigitalTwin). The audit reveals significant documentation gaps — the GitBook covers approximately 18% of Aura events, 5% of components, and has minimal Apex API documentation.
 
-The main RenderDraw package contains 5 LMS channels, 56 Aura events, 163 LWC components, 35 Aura components, and 105 Apex classes. The AssetDigitalTwin package is unexpectedly large (361 Apex classes, 161 Aura components). Extracted Canvas2D/Canvas3D documentation covers hundreds of methods and events that haven't been reconciled with GitBook pages.
+The main RenderDraw package contains 5 LMS channels, 56 Aura events, 163 LWC components, 35 Aura components, and 105 Apex classes. The AssetDigitalTwin deployment directory contains 361 .cls files total, but only ~26 are actual ADT package classes — the rest are SDO\_demo scaffolding (203), sustain\_app (39), Wave (29), and generic utilities. Extracted Canvas2D/Canvas3D documentation covers hundreds of methods and events that haven't been reconciled with GitBook pages.
 
-**Primary recommendation:** Build a structured gap inventory organized by API surface type, mapping each source artifact to its documentation status (documented/undocumented/partial). Use file system patterns (grep for @api, .evt, .messageChannel-meta.xml, public/global class) for systematic discovery.
+Additionally, **47 GitBook pages are empty stubs** (heading only, no content) that need to be populated — these represent planned documentation structure that was never filled in.
+
+**Primary recommendation:** Build a structured gap inventory organized by API surface type, mapping each source artifact to its documentation status (documented/undocumented/partial/empty-stub). Use file system patterns (grep for @api, .evt, .messageChannel-meta.xml, public/global class) for systematic discovery. Prioritize populating empty stub pages alongside new API documentation.
 </research_summary>
 
 <existing_documentation>
@@ -20,6 +22,7 @@ The main RenderDraw package contains 5 LMS channels, 56 Aura events, 163 LWC com
 ### Overall Structure
 - **~216 total markdown files** across the GitBook
 - **~40 API-focused pages** covering components, events, data objects, LMS, and CAD API
+- **47 empty stub pages** (heading only, no content) — need population
 - Organized into: About, Introduction, Usage Scenarios, API Documentation, Digital Twin
 
 ### API Documentation Pages by Category
@@ -111,13 +114,30 @@ The main RenderDraw package contains 5 LMS channels, 56 Aura events, 163 LWC com
 ### AssetDigitalTwin Package
 **Path:** `/Users/erikpilgrim/Documents/Dev/Personal/AssetDigitalTwin/AssetDigitalTwin/force-app/main/default/`
 
-| Category | Count | Notes |
-|----------|-------|-------|
-| LMS Message Channels | 0 | — |
-| Aura Events | 32 | Mostly SDO_ prefixed (demo/Solution Demo Org) |
-| Aura Components | 161 | Large — includes B2B Commerce, Service Cloud, CPQ |
-| LWC Components | 24 | B2B checkout, analytics, sustainability |
-| Apex Classes | 361 | Very large — multi-cloud demo ecosystem |
+**IMPORTANT:** This is a shared deployment directory. The 361 .cls files, 161 Aura components, etc. are NOT all ADT package code. Breakdown:
+
+| Directory Total | Actual ADT | SDO_ Demo | sustain_app__ | Wave_ | Auth/Portal | Utilities |
+|-----------------|------------|-----------|---------------|-------|-------------|-----------|
+| 361 .cls        | ~26        | 203       | 39            | 29    | 26          | 35+       |
+
+**Actual ADT package artifacts (in scope for documentation):**
+
+| Category             | Count | Details                                                    |
+|----------------------|-------|------------------------------------------------------------|
+| LMS Message Channels | 0     | —                                                          |
+| Aura Events          | ~2-5  | Only non-SDO_ events (most of the 32 are SDO_ prefixed)   |
+| Aura Components      | TBD   | Need to filter out SDO_/B2B_/Community_ prefixed           |
+| LWC Components       | TBD   | Need to filter out b2b/sdo/sustain prefixed                |
+| Apex Classes         | ~26   | AssetDigitalTwinController, AutoCompleteController, ChecklistRemoter, ServiceChecklistRemoter, SmartLookup, CompositeSmartLookup, FlowFindCollection variants, CustomerInsightsConfigurationModifier, CustomerInsightsRemoter, RevInsightsConfigurationModifier, RevInsightsRemoter, TimeShiftSettings, and ~14 others |
+
+**Filtering rules for ADT scope:**
+
+- EXCLUDE: SDO_ prefix (203 classes — Solution Demo Org demo)
+- EXCLUDE: sustain_app__ prefix (39 classes — Sustainability Cloud)
+- EXCLUDE: Wave_ prefix (29 classes — CRM Analytics)
+- EXCLUDE: Communities/Site/Lightning/Portal auth templates (26 classes)
+- EXCLUDE: Generic utilities (Zippex, HexUtil, MetadataService, etc.)
+- INCLUDE: AssetDigitalTwin*, AutoComplete*, Checklist*, SmartLookup*, FlowFind*, *InsightsConfiguration*, *InsightsRemoter*, TimeShiftSettings
 
 ### Extracted API Documentation (Reference)
 **Canvas2D_API_Documentation.md:**
@@ -206,7 +226,30 @@ The main RenderDraw package contains 5 LMS channels, 56 Aura events, 163 LWC com
 
 ### Secondary Packages
 **PropelPLM:** Minimal (1 LWC + 1 Apex controller). Small gap.
-**AssetDigitalTwin:** Very large (361 Apex, 161 Aura components). BUT many are SDO_ prefixed (Solution Demo Org) — these may be demo scaffolding, not customer-facing APIs. Phase 9 needs to separate public APIs from demo infrastructure.
+**AssetDigitalTwin:** Shared deployment directory with 361 .cls files, but only ~26 are actual ADT package classes. Aura events/components also inflated by SDO_ demo code. Phase 9 scope is much smaller than originally estimated.
+
+### Empty Stub Pages (47 pages)
+
+**Gap: HIGH** — 47 GitBook pages exist in SUMMARY.md but contain only a heading with no content. These represent planned documentation structure that was never filled in.
+
+**By section:**
+
+- **API Documentation indexes (6):** README files for API docs, 2D/3D components, events, data objects, universal components
+- **2D Use Cases (8):** Part Finder workflow pages (callouts, interactions, OCR, PDF parsing, datatable), admin guides (color selection, additional drawings), user guide, custom dev
+- **3D Use Cases (12):** Admin section READMEs, examples (product photography, asset management, product visualization, field service), 3D scene setup pages (configuration, interaction events, visual scene setup attributes/grouping/actions)
+- **3D Developer/End-User (2):** Developer README, End-User Usage README
+- **CAD Conversion (2):** CAD Conversion README, CAD Conversion Admin UI README
+- **Digital Twin (1):** Setup README
+- **Diving Deeper (2):** Record Management README, Child Lookup, Parent-Child Relationships
+- **Other (2):** Other Apps README, 2D Scene Director
+
+**Key empty pages that should be populated from source/extracted docs:**
+
+- `api-documentation/2d-components-api/2d-scene-director.md` — Canvas2D extracted docs have this content
+- `usage-scenarios/use-cases/2d/custom-2d-app-development-using-salesforce.md` — developer guide stub
+- `usage-scenarios/use-cases/3d/developer/README.md` — developer guide stub
+- `usage-scenarios/use-cases/3d/admin/setup-3d-scene/` — 6 empty pages for scene setup docs
+- `usage-scenarios/use-cases/2d/part-finder/` — 6 empty pages for part finder workflow
 </gap_analysis>
 
 <audit_patterns>
@@ -286,10 +329,10 @@ grep -n "public\|global\|@AuraEnabled\|@InvocableMethod\|@RemoteAction" [class-f
 **Warning signs:** Events that are both fired and handled within the same component family
 
 ### Pitfall 2: AssetDigitalTwin Scope Explosion
-**What goes wrong:** Attempting to document all 361 Apex classes in AssetDigitalTwin
-**Why it happens:** Package contains SDO (Solution Demo Org) demo scaffolding alongside actual product code
-**How to avoid:** Filter by prefix — SDO_ prefixed classes/components are demo infrastructure, not product API. Focus on AssetDigitalTwin-specific classes.
-**Warning signs:** Classes with SDO_, Community_, B2B_ prefixes that don't relate to digital twin functionality
+**What goes wrong:** Attempting to document all 361 .cls files in the AssetDigitalTwin deployment directory
+**Why it happens:** Shared deployment directory bundles `SDO_` demo scaffolding (203), `sustain_app__` (39), `Wave_` (29), auth templates (26), and utilities alongside actual ADT code (~26 classes)
+**How to avoid:** Only document the ~26 actual ADT classes. Filter by prefix — `SDO_`, `sustain_app__`, `Wave_`, `Communities*`, `Site*`, `Lightning*` are not ADT package code.
+**Warning signs:** Classes with `SDO_`, `Community_`, `B2B_`, `sustain_app__`, `Wave_` prefixes
 
 ### Pitfall 3: Stale Existing Documentation
 **What goes wrong:** Trusting existing GitBook pages are accurate and only filling gaps
@@ -339,10 +382,10 @@ Each source artifact should be classified as:
 <open_questions>
 ## Open Questions
 
-1. **AssetDigitalTwin public vs demo scope**
-   - What we know: 361 Apex classes, 161 Aura components — many SDO_ prefixed
-   - What's unclear: Which classes are actual AssetDigitalTwin product APIs vs demo scaffolding
-   - Recommendation: During Phase 9, filter by prefix and cross-reference with AssetDigitalTwin-specific functionality
+1. **AssetDigitalTwin component filtering**
+   - What we know: Only ~26 of 361 .cls files are actual ADT code. Aura events/components also inflated by SDO\_ demo code.
+   - What's unclear: Exact list of ADT-specific Aura components and LWC components (need same filtering as Apex)
+   - Recommendation: During Phase 9, apply same prefix filtering to Aura/LWC directories
 
 2. **Settings_* events — public or internal?**
    - What we know: 22 Settings_* Aura events for Controls, Light, Relationship, RenderDraw
