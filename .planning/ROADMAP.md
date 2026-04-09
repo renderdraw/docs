@@ -35,8 +35,10 @@ None
 
 Plans:
 - [ ] 01-01: Catalog existing GitBook documentation pages and their coverage
-- [ ] 01-02: Scan source packages for all public API surface (LMS, events, @api, Apex)
-- [ ] 01-03: Generate gap report — documented vs. undocumented items
+- [ ] 01-02: Scan LMS message channels and Aura event definitions from source
+- [ ] 01-03: Scan LWC and Aura component @api surfaces from source
+- [ ] 01-04: Scan Apex public classes + PropelPLM and AssetDigitalTwin packages
+- [ ] 01-05: Cross-reference inventories and generate comprehensive gap report
 
 ### Phase 2: LMS Message Channels
 **Goal**: Complete documentation for all Lightning Message Service channels — channels, payload fields, where they fire, and usage context
@@ -137,7 +139,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Audit & Gap Analysis | 0/3 | Not started | - |
+| 1. Audit & Gap Analysis | 0/5 | Planned | - |
 | 2. LMS Message Channels | 0/2 | Not started | - |
 | 3. Aura Events | 0/2 | Not started | - |
 | 4. LWC Component APIs | 0/2 | Not started | - |
