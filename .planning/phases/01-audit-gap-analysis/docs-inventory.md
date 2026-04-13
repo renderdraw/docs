@@ -285,3 +285,74 @@ Total pages in SUMMARY.md: **206** (204 unique paths, 2 duplicate references)
 | Page Path | Title | Status | Lines |
 |-----------|-------|--------|-------|
 | `usage-scenarios/use-cases/README.md` | Use Cases | index | 49 |
+
+## Documented API Items
+
+### Aura Events (9 documented, 1 empty stub)
+
+| Event Name | Doc Page | Attributes Documented | Notes |
+|------------|----------|----------------------|-------|
+| EVT_Renderer_Loaded | `events-aura/evt_renderer_loaded.md` | (none — notification only) | Handler: `rendererLoaded` |
+| EVT_Renderer_Context_Details_Closed | `events-aura/evt_renderer_context_details_closed.md` | (none — notification only) | Handler: `contextDetailsClosed` |
+| EVT_Renderer_Element_Added | `events-aura/evt_renderer_element_added.md` | `elementType`, `name`, `uniqueId` | |
+| EVT_Renderer_Get_CameraPositionandTarget | `events-aura/evt_renderer_get_camerapositionandtarget.md` | `data` (object: target, position{x,y,z,alpha,beta}) | |
+| EVT_Renderer_Get_Hierarchy | `events-aura/evt_renderer_get_hierarchy.md` | `data` (object: scene hierarchy JSON) | |
+| EVT_Renderer_Mesh_Selected | `events-aura/evt_renderer_mesh_selected.md` | `context`, `id`, `name`, `uniqueId` | |
+| EVT_Renderer_Mesh_Selection_Cleared | `events-aura/evt_renderer_mesh_selection_cleared.md` | **EMPTY STUB** — no content | |
+| EVT_Renderer_Select_Component | `events-aura/evt_renderer_select_component.md` | `context`, `id`, `name`, `uniqueId` | |
+| EVT_Renderer_Screenshot_Taken | `events-aura/evt_renderer_screenshot_taken.md` | `data` (string: base64) | |
+
+### LMS Channels (5 documented + 1 code example)
+
+| Channel Name | Doc Page | Fields Documented |
+|-------------|----------|-------------------|
+| RDraw__Canvas_ElementHovered__c | `lms/canvas-element-hovered.md` | `contextId`, `elementId`, `elementType`, `elementName`, `record` |
+| RDraw__Canvas_ElementSelected__c | `lms/canvas-element-selected.md` | `contextId`, `elementId`, `elementType`, `elementName`, `record` |
+| RDraw__Canvas_Initialized__c | `lms/canvas-initialized.md` | `renderContextId`, `sceneSettings` |
+| RDraw__Canvas_Interaction__c | `lms/canvas-interaction.md` | `contextId`, `name`, `parameters` |
+| RDraw__Record_Selected__c | `lms/record-selected.md` | `record` |
+| (code example) | `lms/code-example-of-listening-to-lms-events.md` | Demonstrates subscribing to Canvas_Interaction, Canvas_Initialized, Canvas_ElementSelected, Canvas_ElementHovered |
+
+### Component APIs (8 documented, 2 empty)
+
+| Component | Framework | Doc Page | Properties/Attributes Listed | Methods | Events |
+|-----------|-----------|----------|------------------------------|---------|--------|
+| Canvas3D (3D Interaction Canvas) | LWC | `3d-components-api/components-aura-lwc/3d-interaction-canvas-lwc.md` | 31 @api properties | 68 methods | 20 events |
+| AdvancedRenderer | Aura | `3d-components-api/components-aura-lwc/3d-advanced-renderer-aura.md` | 30 attributes | 42 methods | (via events) |
+| SceneDirector (3D) | Aura | `3d-components-api/components-aura-lwc/3d-scene-director-aura.md` | 2 attributes (recordId, selectedTabId) | — | — |
+| SimpleRenderer | Aura | `3d-components-api/components-aura-lwc/3d-simple-renderer-aura.md` | 10 attributes | — | — |
+| FileSelector (File Attachment Viewer) | Aura | `3d-components-api/components-aura-lwc/3d-file-attachment-viewer-aura.md` | 2 attributes (recordId, showFileUpload) | — | — |
+| Canvas2D (2D Interaction Canvas) | LWC | `2d-components-api/2d-interaction-canvas.md` | 9 properties (+ 2 deprecated) | 28 methods | 24 events |
+| 2D Scene Director | LWC | `2d-components-api/2d-scene-director.md` | **EMPTY STUB** | — | — |
+| RDraw-layout | LWC | `universal-components/rdraw-layout.md` | 10 properties, 5 slots | 2 methods | 1 event |
+| dynamicContentComponent_treeGrid | — | `universal-components/dynamiccontentcomponent_treegrid.md` | **EMPTY** (table headers only, no data) | — | — |
+
+#### Canvas3D — Detailed Properties (31)
+`allowSelection`, `autoRotate`, `brandImageURL`, `cachedHierarchy`, `childComponentPrefixToFilter`, `childComponentSuffixToFilter`, `contextDetailHeaderText`, `contextSize`, `displayActionInformationPane`, `displayActionInformationPaneOnSelection`, `displayContext`, `displayContextDetails`, `displaySidebar`, `enableTechnicalDrawingMode`, `environmentColor`, `finishedLoading`, `loadingImage`, `nodeIgnoreList`, `outlineComponents`, `overrideURL`, `playground`, `recordId`, `salesforceContent`, `sceneSettings`, `selectedComponentName`, `showComponentInformationOnHover`, `showMedia`, `showRelatedRecordDetailsOnHover`, `sidebarSize`, `size`, `spitShine`, `useDigitalExperience`
+
+#### AdvancedRenderer — Detailed Attributes (30)
+`actionInformationPane`, `allowSelection`, `availableActions`, `body`, `brandImageURL`, `childComponentPrefixToFilter`, `childComponentSuffixToFilter`, `contentVersionId`, `contextContent`, `contextDetailContent`, `contextDetailHeaderText`, `contextSize`, `displayActionInformationPane`, `displayActionInformationPaneOnSelection`, `displayContext`, `displayContextDetails`, `displaySidebar`, `environmentColor`, `loadingImage`, `nodeIgnoreList`, `overrideURL`, `playground`, `recordId`, `relatedRecordBusy`, `selectedComponentName`, `showUserMessages`, `sidebarContent`, `sidebarSize`, `size`, `spitShine`, `useCommunities`, `userInteracted`
+
+#### Canvas2D — Detailed Properties (9+2 deprecated)
+`canvasresults`, `canvassource`, `model`, `recordId`, `renderContextId`, `screenshot`, `serializedResult`, `serializedSource`, ~~`resultAreas`~~ (deprecated), ~~`resultItems`~~ (deprecated)
+
+### Data Objects (5 documented — Apex classes)
+
+| Object Name | Doc Page | Properties Listed |
+|-------------|----------|-------------------|
+| RDraw.Canvas | `data-objects/canvas.md` | `id`, `name`, `backgroundImageURL`, `placedClickableShapes` (List\<BaseCanvasItem\>), `placedDroppableAreas` (List\<DroppableArea\>), `placedDraggableItems` (List\<BaseCanvasItem\>), `placedLayoutAreas` (List\<BaseCanvasItem\>), `placedLayoutWalls` (List\<LayoutWall\>) |
+| RDraw.BaseCanvasItem | `data-objects/basecanvasitem.md` | `id`, `name`, `recordId`, `value`, `x`, `y`, `width`, `height`, `templateId` |
+| RDraw.LayoutWall | `data-objects/layoutwall.md` | `id`, `x1`, `y1`, `x2`, `y2`, `points` |
+| RDraw.DropZone | `data-objects/dropzone.md` | `id`, `name`, `recordId`, `value`, `x`, `y`, `width`, `height`, `templateId`, `placedDraggableItem` |
+| RDraw.DroppableArea | `data-objects/droppablearea.md` | `id`, `name`, `recordId`, `value`, `x`, `y`, `width`, `height`, `templateId`, `imageURL`, `sortingEnabled`, `sortingDirection`, `dropZones`, `draggableItems` |
+
+### Apex APIs (mentioned in docs)
+
+| Class/Method | Doc Page | Signature Documented |
+|-------------|----------|---------------------|
+| RDraw.CanvasScene | `2d/data-interaction-within-a-flow/modifying-canvas-with-apex.md` | Referenced as input/output for Canvas2D component |
+| RDraw.Canvas | `data-objects/canvas.md` | Properties only (see Data Objects above) |
+| RDraw.BaseCanvasItem | `data-objects/basecanvasitem.md` | Properties only |
+| RDraw.LayoutWall | `data-objects/layoutwall.md` | Properties only |
+| RDraw.DropZone | `data-objects/dropzone.md` | Properties only |
+| RDraw.DroppableArea | `data-objects/droppablearea.md` | Properties only |
