@@ -34,7 +34,7 @@ None
 **Plans**: TBD
 
 Plans:
-- [ ] 01-01: Catalog existing GitBook documentation pages and their coverage
+- [x] 01-01: Catalog existing GitBook documentation pages and their coverage
 - [ ] 01-02: Scan LMS message channels and Aura event definitions from source
 - [ ] 01-03: Scan LWC and Aura component @api surfaces from source
 - [ ] 01-04: Scan Apex public classes + PropelPLM and AssetDigitalTwin packages
@@ -139,7 +139,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Audit & Gap Analysis | 0/5 | Planned | - |
+| 1. Audit & Gap Analysis | 1/5 | In Progress | - |
 | 2. LMS Message Channels | 0/2 | Not started | - |
 | 3. Aura Events | 0/2 | Not started | - |
 | 4. LWC Component APIs | 0/2 | Not started | - |
