@@ -47,8 +47,8 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [x] 02-01: Audit all LMS channel definitions across packages
-- [ ] 02-02: Document undocumented channels with payload shapes and origins
+- [x] 02-01: Audit all LMS channel definitions across packages and enrich GitBook pages (rolled up 02-02's documentation scope)
+- [x] 02-02: ~~(rolled into 02-01 — no follow-up needed; Phase 2 complete after 02-01)~~
 
 ### Phase 3: Aura Events
 **Goal**: Complete documentation for all Aura application and component events — event definitions, where they fire, payload shapes, and handler patterns
@@ -57,7 +57,7 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: Audit Source/Handler components for 33 public Aura events (produce mapping inventory)
+- [x] 03-01: Audit Source/Handler components for 33 public Aura events (produce mapping inventory)
 - [ ] 03-02: Enrich 9 existing Aura event pages and populate empty stub
 - [ ] 03-03: Document 10 undocumented Renderer events
 - [ ] 03-04: Document 14 undocumented Admin/Layout/Scene/Interaction/Other events
@@ -143,8 +143,8 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. Audit & Gap Analysis | 5/5 | Complete | 2026-04-17 |
-| 2. LMS Message Channels | 1/2 | Complete | 2026-04-17 |
-| 3. Aura Events | 0/2 | Not started | - |
+| 2. LMS Message Channels | 1/1 | Complete | 2026-04-17 |
+| 3. Aura Events | 1/5 | In progress | - |
 | 4. LWC Component APIs | 0/2 | Not started | - |
 | 5. Aura Component APIs | 0/2 | Not started | - |
 | 6. Apex Public APIs | 0/2 | Not started | - |

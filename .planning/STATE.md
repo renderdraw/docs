@@ -5,35 +5,36 @@
 See: .planning/PROJECT.md (updated 2026-04-09)
 
 **Core value:** Complete, accurate public API surface documentation — every LMS message, Aura event, public @api property, and Apex method that customers and partners can use, with where it fires, payload shape, and usage context.
-**Current focus:** Phase 2 — LMS Message Channels
+**Current focus:** Phase 3 — Aura Events
 
 ## Current Position
 
-Phase: 2 of 10 (LMS Message Channels) — COMPLETE
-Plan: 02-01 complete
-Status: Phase 2 complete — ready for Phase 3
-Last activity: 2026-04-17 — Plan 02-01 completed (LMS channel docs enriched, Phase 2 complete)
+Phase: 3 of 10 (Aura Events) — IN PROGRESS
+Plan: 03-01 complete (1 of 5)
+Status: Phase 3 plan 1 of 5 complete — ready for 03-02
+Last activity: 2026-04-17 — Plan 03-01 completed (Aura event source/handler mapping produced)
 
-Progress: ███░░░░░░░ 30%
+Progress: ███░░░░░░░ 27%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: ~13 min
-- Total execution time: ~1.3 hours
+- Total plans completed: 7
+- Average duration: ~12 min
+- Total execution time: ~1.4 hours
 
 **By Phase:**
 
 | Phase | Plans | Total   | Avg/Plan |
 |-------|-------|---------|----------|
 | 1     | 5/5   | ~75 min | ~15 min  |
-| 2     | 1/2   | ~3 min  | ~3 min   |
+| 2     | 1/1   | ~3 min  | ~3 min   |
+| 3     | 1/5   | ~10 min | ~10 min  |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-02 (~15 min), 01-03 (~15 min), 01-04 (~15 min), 01-05 (~15 min), 02-01 (~3 min)
-- Trend: Phase 2 plans running faster than Phase 1 (docs enrichment vs audit)
+- Last 5 plans: 01-03 (~15 min), 01-04 (~15 min), 01-05 (~15 min), 02-01 (~3 min), 03-01 (~10 min)
+- Trend: Audit plans (Phase 1/3) run ~10-15 min; pure doc enrichment (Phase 2) was fastest
 
 ## Accumulated Context
 
@@ -43,6 +44,7 @@ Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
 - SUMMARY.md is at repo root (not docs/SUMMARY.md) — all plans should reference root path
+- Phase 2 plan 02-02 was rolled into 02-01 (no follow-up needed after audit/enrichment completed in one pass); ROADMAP Phase 2 count reconciled to 1/1.
 
 ### Deferred Issues
 
@@ -55,5 +57,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-17
-Stopped at: Plan 02-01 complete — Phase 2 LMS Message Channels (plan 1 of 2) done
-Resume file: Phase 2 plan 02-02 or Phase 3 planning
+Stopped at: Plan 03-01 complete — Phase 3 Aura Events (plan 1 of 5) done
+Resume file: Phase 3 plan 03-02
