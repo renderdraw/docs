@@ -15,7 +15,7 @@ None
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [x] **Phase 1: Audit & Gap Analysis** — Cross-reference existing docs against source to build gap inventory
-- [ ] **Phase 2: LMS Message Channels** — Audit and document all LMS channels, payloads, and origins
+- [x] **Phase 2: LMS Message Channels** — Audit and document all LMS channels, payloads, and origins
 - [ ] **Phase 3: Aura Events** — Audit and document all Aura application/component events
 - [ ] **Phase 4: LWC Component APIs** — Audit all LWC public @api properties across main package
 - [ ] **Phase 5: Aura Component APIs** — Audit all Aura public attributes across main package
@@ -47,7 +47,7 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 02-01: Audit all LMS channel definitions across packages
+- [x] 02-01: Audit all LMS channel definitions across packages
 - [ ] 02-02: Document undocumented channels with payload shapes and origins
 
 ### Phase 3: Aura Events
@@ -140,7 +140,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. Audit & Gap Analysis | 5/5 | Complete | 2026-04-17 |
-| 2. LMS Message Channels | 0/2 | Not started | - |
+| 2. LMS Message Channels | 1/2 | Complete | 2026-04-17 |
 | 3. Aura Events | 0/2 | Not started | - |
 | 4. LWC Component APIs | 0/2 | Not started | - |
 | 5. Aura Component APIs | 0/2 | Not started | - |
