@@ -14,4 +14,14 @@ RenderDraw's use of LMS underscores a commitment to providing a robust, scalable
 
 This documentation aims to guide developers and administrators through the intricacies of interacting with RenderDraw using LMS, encompassing the setup, usage, and best practices to fully exploit the potential of RenderDraw in enhancing enterprise visualizations and user interactions.
 
+## Channel Reference
+
+| Channel | Purpose | Publishers | Subscribers |
+| ------- | ------- | ---------- | ----------- |
+| [Canvas Interaction](canvas-interaction.md) | Invoke a named interaction on the canvas | canvas3D, standalone\_DataTable | canvas3D (bidirectional), canvas2D |
+| [Canvas Initialized](canvas-initialized.md) | Signal the canvas is ready | canvas3D, canvas2D | standalone\_DataTable |
+| [Canvas Element Selected](canvas-element-selected.md) | User selected an element | canvas3D, canvas2D | standalone\_DataTable, groupSelection |
+| [Canvas Element Hovered](canvas-element-hovered.md) | User hovered over an element | canvas3D, canvas2D | standalone\_DataTable |
+| [Record Selected](record-selected.md) | A record was selected in the data table | standalone\_DataTable | canvas3D, canvas2D |
+
 \
