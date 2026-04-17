@@ -10,3 +10,18 @@ Triggered during the setup phase of the canvas to ensure proper configuration an
 
 * **renderContextId**: The render context ID.
 * **sceneSettings**: An object representing the scene settings.
+
+**Channel Name (for import):**
+
+```javascript
+import CANVAS_INITIALIZED_CHANNEL from "@salesforce/messageChannel/RDraw__Canvas_Initialized__c";
+```
+
+**Publisher Components:**
+
+* canvas3D
+* canvas2D
+
+**Subscriber Components:**
+
+* standalone\_DataTable

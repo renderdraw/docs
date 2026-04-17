@@ -13,3 +13,19 @@ Used to trigger actions or display information related to the selected element i
 * **elementType**: The type of the selected element, indicating the shape or canvas element type in 2D (e.g., layoutArea), or component in 3D.
 * **elementName**: The name of the selected element.
 * **record**: The associated record of the selected element, where applicable.
+
+**Channel Name (for import):**
+
+```javascript
+import CANVAS_ELEMENTSELECTED_CHANNEL from "@salesforce/messageChannel/RDraw__Canvas_ElementSelected__c";
+```
+
+**Publisher Components:**
+
+* canvas3D
+* canvas2D
+
+**Subscriber Components:**
+
+* standalone\_DataTable
+* groupSelection

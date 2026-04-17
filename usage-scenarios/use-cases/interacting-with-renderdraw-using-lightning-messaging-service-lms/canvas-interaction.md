@@ -12,4 +12,20 @@ Utilized for tracking various interactions within the canvas, such as clicks, dr
 * **name**: The name of the interaction.
 * **parameters**: Parameters to pass to the interaction, allowing for customizable responses or actions based on the interaction type.
 
+**Channel Name (for import):**
+
+```javascript
+import CANVAS_INTERACTION_CHANNEL from "@salesforce/messageChannel/RDraw__Canvas_Interaction__c";
+```
+
+**Publisher Components:**
+
+* canvas3D
+* standalone\_DataTable
+
+**Subscriber Components:**
+
+* canvas3D (bidirectional)
+* canvas2D
+
 \
