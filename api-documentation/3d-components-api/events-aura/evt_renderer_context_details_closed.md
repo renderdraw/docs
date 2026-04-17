@@ -10,6 +10,21 @@ This event is raised when the Context Details Back button is pressed.&#x20;
 
 There are no parameters for this event, it is only to notify when the Context Pane is going to reappear for re-fetching of data or updating the 3D scene.
 
+#### Source Component
+
+* AdvancedLayout
+
+#### Handler Component
+
+* SceneSetup
+* AdminVisualSceneSetup
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Context_Details_Closed" action="{!c.handleContextDetailsClosed}" />
+```
+
 ### Example Usage
 
 Component

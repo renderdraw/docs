@@ -11,9 +11,26 @@ This event is raised when a subcomponent of a 3D drawing is selected using Compo
 | **NAME** | **TYPE** | **REQUIRED** | **DESCRIPTION**                                                    |
 | -------- | -------- | ------------ | ------------------------------------------------------------------ |
 | context  | object   |              | Additional information provided with the selection of a component. |
-| id       | string   |              | The Id of the component selected                                   |
-| name     | string   |              | The name of the component selected                                 |
-| uniqueId | string   |              | The uniqueId of the component selected.                            |
+| id       | string   | Yes          | The Id of the component selected                                   |
+| name     | string   | Yes          | The name of the component selected                                 |
+| uniqueId | string   | Yes          | The uniqueId of the component selected.                            |
+
+#### Source Component
+
+* SimpleRenderer
+
+#### Handler Component
+
+* AdminVisualSceneParameters
+* AdminTestRenderer
+* AdminVisualSceneSetup
+* AdvancedRenderer
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Mesh_Selected" action="{!c.handleMeshSelected}" />
+```
 
 #### Example Usage
 

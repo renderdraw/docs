@@ -10,6 +10,23 @@ This event is raised when the renderer has created a scene and fully loaded a 3D
 
 There are no parameters for this event, it is only to notify the consuming component when a scene is displayed
 
+#### Source Component
+
+* SimpleRenderer
+
+#### Handler Component
+
+* AdminVisualSceneParameters
+* AdminTestRenderer
+* SetupElementMapping
+* AdvancedRenderer
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Loaded" action="{!c.handleRendererLoaded}" />
+```
+
 #### Example Usage
 
 Component

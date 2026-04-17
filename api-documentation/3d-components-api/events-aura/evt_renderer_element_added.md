@@ -8,11 +8,26 @@ This event is raised when an element is added to the 3D scene. Handling this eve
 
 #### Parameters
 
-| **NAME**    | **TYPE** | **DESCRIPTION**                                                                           |
-| ----------- | -------- | ----------------------------------------------------------------------------------------- |
-| elementType | string   | The type of element added to the screen, one of 3DText,  photoDome, video, 2DImage, model |
-| name        | string   | The name of the component selected                                                        |
-| uniqueId    | string   | The uniqueId of the component selected.                                                   |
+| **NAME**    | **TYPE** | **DESCRIPTION**                                                                                                  |
+| ----------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| elementType | string   | The type of element added to the screen, one of 3DText,  photoDome, video, 2DImage, model                        |
+| name        | string   | The name of the component selected                                                                               |
+| uniqueId    | string   | The uniqueId of the component selected.                                                                          |
+| transaction | string   | A transaction identifier for correlating the add operation with a later verify (see EVT_Renderer_Element_Verify) |
+
+#### Source Component
+
+* SimpleRenderer
+
+#### Handler Component
+
+* AdvancedRenderer
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Element_Added" action="{!c.handleElementAdded}" />
+```
 
 #### Example Usage
 

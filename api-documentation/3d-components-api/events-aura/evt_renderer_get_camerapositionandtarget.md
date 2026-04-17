@@ -27,6 +27,20 @@ This event is raised when **getCameraPositionandTarget** is called on the Advanc
 }
 ```
 
+#### Source Component
+
+* SimpleRenderer
+
+#### Handler Component
+
+* AdvancedRenderer
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Get_CameraPositionandTarget" action="{!c.handleGetCameraPositionandTarget}" />
+```
+
 #### &#x20;Example Usage
 
 Choosing where to aim the camera is important when displaying 3D diagrams to users. Often, its easier to navigate where you want the users to look and get the position of the camera in order to re-use as part of a scene or a configuration.To do this, simply call the **getCameraPositionandTarget** on the instance of your renderer, after subscribing to the message type and you'll receive the position in JSON format.

@@ -15,6 +15,20 @@ This event is raised when a subcomponent of a 3D drawing is selected using Compo
 | name     | string   |              | The name of the component selected                                 |
 | uniqueId | string   |              | The uniqueId of the component selected.                            |
 
+#### Source Component
+
+* None in main package — may be fired from external implementing components.
+
+#### Handler Component
+
+* AdvancedRenderer
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Select_Component" action="{!c.handleSelectComponent}" />
+```
+
 #### Example Usage
 
 On selection of a 3D component subnode, the `RDraw:EVT_Renderer_Select_Component` event is raised, passing the id, name and uniqueId. These can then be processed/linked to a Salesforce record or process.&#x20;

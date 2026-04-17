@@ -8,9 +8,26 @@ This event is raised when the **getHierarchy**  method is called on the Advanced
 
 #### Parameters
 
-| **NAME** | **TYPE** | **REQUIRED** | **DESCRIPTION**                                       |
-| -------- | -------- | ------------ | ----------------------------------------------------- |
-| data     | object   |              | The JSON hierarchical representation of the 3D scene  |
+| **NAME**    | **TYPE** | **REQUIRED** | **DESCRIPTION**                                                                           |
+| ----------- | -------- | ------------ | ----------------------------------------------------------------------------------------- |
+| data        | object   |              | The JSON hierarchical representation of the 3D scene                                      |
+| transaction | string   |              | A transaction identifier for correlating the get-hierarchy call with downstream handlers  |
+
+#### Source Component
+
+* SimpleRenderer
+
+#### Handler Component
+
+* AdminVisualSceneParameters
+* AdvancedRenderer
+* AdminVisualSceneSetup
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Get_Hierarchy" action="{!c.handleGetHierarchy}" />
+```
 
 #### Example Usage
 

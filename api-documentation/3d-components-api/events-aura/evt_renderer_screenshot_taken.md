@@ -11,3 +11,17 @@ This event is raised when a screenshot is taken, typically from the action menu.
 | **NAME** | **TYPE** | **DESCRIPTION**          |
 | -------- | -------- | ------------------------ |
 | data     | string   | A base64 encoded string  |
+
+#### Source Component
+
+* SimpleRenderer
+
+#### Handler Component
+
+* None in main package — consumed by external implementing components.
+
+#### Event Name (for handler)
+
+```xml
+<aura:handler event="RDraw:EVT_Renderer_Screenshot_Taken" action="{!c.handleScreenshotTaken}" />
+```
