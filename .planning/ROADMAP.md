@@ -57,8 +57,11 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: Audit all Aura event definitions across packages
-- [ ] 03-02: Document undocumented events with payloads, origins, and usage
+- [ ] 03-01: Audit Source/Handler components for 33 public Aura events (produce mapping inventory)
+- [ ] 03-02: Enrich 9 existing Aura event pages and populate empty stub
+- [ ] 03-03: Document 10 undocumented Renderer events
+- [ ] 03-04: Document 14 undocumented Admin/Layout/Scene/Interaction/Other events
+- [ ] 03-05: Enrich events README with category tables and complete Phase 3
 
 ### Phase 4: LWC Component APIs
 **Goal**: Complete documentation for all public @api properties and methods on LWC components in the main RenderDraw package
